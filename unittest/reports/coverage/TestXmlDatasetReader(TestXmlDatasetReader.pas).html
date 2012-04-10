@@ -1,0 +1,950 @@
+<HTML><HEAD><META CONTENT="text/html; charset=ISO-8859-1" HTTP-EQUIV="Content-Type" />
+<TITLE>Delphi CodeCoverage Coverage Report</TITLE> <STYLE TYPE="text/css"> TABLE, TD, TH {border-style: solid;border-color: black;}
+TD, TH { background: white; margin: 0; line-height: 100%; padding-left: 0.5em; padding-right: 0.5em;}
+TD { border-width: 0 1px 0 0;} TH { border-width: 1px 1px 1px 0; }
+P, H1, H2, H3, TH { font-family: verdana,arial,sans-serif; font-size: 10pt;}
+TD { font-family: courier,monospace; font-size: 10pt;}
+TABLE.s TD {padding-left: 0.25em; padding-right: 0.25em; }
+TABLE.s TR.notcovered TD { background: #DDDDFF; }
+TABLE.s TR.nocodegen TD { background: #FFFFEE; }
+TABLE.s TR.covered TD { background: #CCFFCC; }
+TABLE.s {border-width: 1px 0 1px 1px; }
+    </STYLE></HEAD>
+<BODY>
+<P> Coverage report for <STRONG>TestXmlDatasetReader (tests\TestXmlDatasetReader.pas)</STRONG>.</P>
+<P> Generated at 25/07/2011 20:13:25 by DelphiCodeCoverage - an open source tool for Delphi Code Coverage.</P>
+<P> Statistics for tests\TestXmlDatasetReader.pas </P>
+<TABLE CLASS="s" CELLSPACING="0">
+  <TR>
+    <TD>Number of lines covered</TD>
+    <TD ALIGN="RIGHT">101</TD>
+  </TR>
+  <TR>
+    <TD>Number of lines with code gen</TD>
+    <TD ALIGN="RIGHT">109</TD>
+  </TR>
+  <TR>
+    <TD>Line coverage in percent</TD>
+    <TD ALIGN="RIGHT">92%</TD>
+  </TR>
+</TABLE>
+<BR><BR>
+   <TABLE CLASS="s" WIDTH="100%" CELLSPACING="0">
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">1</TD>
+    <TD><PRE STYLE="display: inline">unit TestXmlDatasetReader;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">2</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">3</TD>
+    <TD><PRE STYLE="display: inline">interface</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">4</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">5</TD>
+    <TD><PRE STYLE="display: inline">uses BaseTestCase, DataSet, DataSetDecorator, DataSetListBuilder, XmlClientDataSet,</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">6</TD>
+    <TD><PRE STYLE="display: inline">  XmlDatasetReader, XmlValidator, TestResources, Classes, Forms, Windows;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">7</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">8</TD>
+    <TD><PRE STYLE="display: inline">type</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">9</TD>
+    <TD><PRE STYLE="display: inline">  TTestXmlDatasetReader = class(TBaseTestCase)</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">10</TD>
+    <TD><PRE STYLE="display: inline">  private</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">11</TD>
+    <TD><PRE STYLE="display: inline">  public</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">12</TD>
+    <TD><PRE STYLE="display: inline">  published</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">13</TD>
+    <TD><PRE STYLE="display: inline">    procedure FileNotFound;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">14</TD>
+    <TD><PRE STYLE="display: inline">    procedure CheckTablesSampleFile;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">15</TD>
+    <TD><PRE STYLE="display: inline">    procedure CheckDataSampleFile;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">16</TD>
+    <TD><PRE STYLE="display: inline">    procedure InvalidXML_NodeNotClosedStartedTag;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">17</TD>
+    <TD><PRE STYLE="display: inline">    procedure InvalidXML_NodeNotClosedTag;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">18</TD>
+    <TD><PRE STYLE="display: inline">    procedure LoadFromXmlText;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">19</TD>
+    <TD><PRE STYLE="display: inline">    procedure LoadFromStream;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">20</TD>
+    <TD><PRE STYLE="display: inline">    procedure LoadFromFile_EmptyXML;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">21</TD>
+    <TD><PRE STYLE="display: inline">    procedure LoadFromXmlText_EmptyXML;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">22</TD>
+    <TD><PRE STYLE="display: inline">    procedure LoadFromStream_EmptyXML;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">23</TD>
+    <TD><PRE STYLE="display: inline">    procedure NoFieldDefinition;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">24</TD>
+    <TD><PRE STYLE="display: inline">    procedure withDataSet;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">25</TD>
+    <TD><PRE STYLE="display: inline">    procedure withValidator;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">26</TD>
+    <TD><PRE STYLE="display: inline">  end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">27</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">28</TD>
+    <TD><PRE STYLE="display: inline">implementation</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">29</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">30</TD>
+    <TD><PRE STYLE="display: inline">uses Exceptions, TestFramework, MockDataSet, SysUtils, MockXmlValidator;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">31</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">32</TD>
+    <TD><PRE STYLE="display: inline">{ TTestXmlDatasetReader }</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">33</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">34</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.FileNotFound;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">35</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">36</TD>
+    <TD><PRE STYLE="display: inline">  ExpectedException := Exceptions.EFileNotFoundException;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">37</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">38</TD>
+    <TD><PRE STYLE="display: inline">  TXmlDataSetBuilder.newFromFile('c:\xyz.xyz').build;</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">39</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">40</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">41</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.CheckTablesSampleFile;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">42</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">43</TD>
+    <TD><PRE STYLE="display: inline">  vIterator: IDataSetIterator;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">44</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">45</TD>
+    <TD><PRE STYLE="display: inline">  vIterator := TXmlDataSetBuilder.newFromFile(SampleXMLPath).buildIterator;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">46</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">47</TD>
+    <TD><PRE STYLE="display: inline">  CheckNotNull(vIterator);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">48</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">49</TD>
+    <TD><PRE STYLE="display: inline">  CheckTrue(vIterator.HasNext);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">50</TD>
+    <TD><PRE STYLE="display: inline">  CheckNotNull(vIterator.Next);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">51</TD>
+    <TD><PRE STYLE="display: inline">  CheckNotNull(vIterator.Next);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">52</TD>
+    <TD><PRE STYLE="display: inline">  CheckFalse(vIterator.HasNext);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">53</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">54</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">55</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.CheckDataSampleFile;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">56</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">57</TD>
+    <TD><PRE STYLE="display: inline">  vIterator: IDataSetIterator;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">58</TD>
+    <TD><PRE STYLE="display: inline">  vDataset: IDataSet;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">59</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">60</TD>
+    <TD><PRE STYLE="display: inline">  vIterator := TXmlDataSetBuilder.newFromFile(SampleXMLPath).buildIterator;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">61</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">62</TD>
+    <TD><PRE STYLE="display: inline">  CheckNotNull(vIterator);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">63</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">64</TD>
+    <TD><PRE STYLE="display: inline">  vDataset := vIterator.Next;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">65</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('TEST_TABLE', vDataset.getTableName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">66</TD>
+    <TD><PRE STYLE="display: inline">  CheckEquals(3, vDataset.getFieldCount);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">67</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">68</TD>
+    <TD><PRE STYLE="display: inline">  vDataset.First;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">69</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('COL0', vDataset.getField(0).FieldName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">70</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('row 0 col 0', vDataset.getField(0).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">71</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('COL1', vDataset.getField(1).FieldName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">72</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('row 0 col 1', vDataset.getField(1).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">73</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('COL2', vDataset.getField(2).FieldName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">74</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('row 0 col 2', vDataset.getField(2).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">75</TD>
+    <TD><PRE STYLE="display: inline">  vDataset.Next;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">76</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">77</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('COL0', vDataset.getField(0).FieldName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">78</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('row 1 col 0', vDataset.getField(0).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">79</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('COL1', vDataset.getField(1).FieldName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">80</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('row 1 col 1', vDataset.getField(1).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">81</TD>
+    <TD><PRE STYLE="display: inline">  vDataset.Next;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">82</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">83</TD>
+    <TD><PRE STYLE="display: inline">  CheckTrue(vDataset.Eof);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">84</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">85</TD>
+    <TD><PRE STYLE="display: inline">  vDataset := vIterator.Next;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">86</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('COL0', vDataset.getField(0).FieldName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">87</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('row 0 col 0', vDataset.getField(0).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">88</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('COL1', vDataset.getField(1).FieldName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">89</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('row 0 col 1', vDataset.getField(1).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">90</TD>
+    <TD><PRE STYLE="display: inline">  vDataset.Next;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">91</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">92</TD>
+    <TD><PRE STYLE="display: inline">  CheckTrue(vDataset.Eof);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">93</TD>
+    <TD><PRE STYLE="display: inline">  CheckFalse(vIterator.HasNext);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">94</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">95</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">96</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.LoadFromXmlText;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">97</TD>
+    <TD><PRE STYLE="display: inline">const</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">98</TD>
+    <TD><PRE STYLE="display: inline">  sInitialXml = '<root><tabela col1="col1 row1" col2="col2 row1"/></root>';</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">99</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">100</TD>
+    <TD><PRE STYLE="display: inline">  vDataSet: IDataSetReadOnly;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">101</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">102</TD>
+    <TD><PRE STYLE="display: inline">  vDataSet := TXmlDataSetBuilder.newFromText(sInitialXml).build;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">103</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">104</TD>
+    <TD><PRE STYLE="display: inline">  CheckNotNull(vDataSet);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">105</TD>
+    <TD><PRE STYLE="display: inline">  CheckEquals(2, vDataSet.getFieldCount);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">106</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('tabela', vDataSet.getTableName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">107</TD>
+    <TD><PRE STYLE="display: inline">  CheckFalse(vDataSet.Eof);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">108</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">109</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('col1 row1', vDataSet.getField(0).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">110</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString('col2 row1', vDataSet.getField(1).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">111</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">112</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">113</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.LoadFromStream;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">114</TD>
+    <TD><PRE STYLE="display: inline">const</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">115</TD>
+    <TD><PRE STYLE="display: inline">  sInitialXml = '<root><tabela col1="col1 row1" col2="col2 row1"/></root>';</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">116</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">117</TD>
+    <TD><PRE STYLE="display: inline">  vStream: TStringStream;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">118</TD>
+    <TD><PRE STYLE="display: inline">  vDataSet: IDataSetReadOnly;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">119</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">120</TD>
+    <TD><PRE STYLE="display: inline">  vStream := TStringStream.Create(sInitialXml);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">121</TD>
+    <TD><PRE STYLE="display: inline">  try</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">122</TD>
+    <TD><PRE STYLE="display: inline">    vDataSet := TXmlDataSetBuilder.newFromStream(vStream).build;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">123</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">124</TD>
+    <TD><PRE STYLE="display: inline">    CheckNotNull(vDataSet);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">125</TD>
+    <TD><PRE STYLE="display: inline">    CheckEquals(2, vDataSet.getFieldCount);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">126</TD>
+    <TD><PRE STYLE="display: inline">    CheckEqualsString('tabela', vDataSet.getTableName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">127</TD>
+    <TD><PRE STYLE="display: inline">    CheckFalse(vDataSet.Eof);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">128</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">129</TD>
+    <TD><PRE STYLE="display: inline">    CheckEqualsString('col1 row1', vDataSet.getField(0).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">130</TD>
+    <TD><PRE STYLE="display: inline">    CheckEqualsString('col2 row1', vDataSet.getField(1).AsString);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">131</TD>
+    <TD><PRE STYLE="display: inline">  finally</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">132</TD>
+    <TD><PRE STYLE="display: inline">    vStream.Free;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">133</TD>
+    <TD><PRE STYLE="display: inline">  end;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">134</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">135</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">136</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.NoFieldDefinition;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">137</TD>
+    <TD><PRE STYLE="display: inline">const</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">138</TD>
+    <TD><PRE STYLE="display: inline">  sInitialXml = '<root><tabela/></root>';</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">139</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">140</TD>
+    <TD><PRE STYLE="display: inline">  vDataSet: IDataSetReadOnly;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">141</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">142</TD>
+    <TD><PRE STYLE="display: inline">  ExpectedException := ENoFieldDefinition;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">143</TD>
+    <TD><PRE STYLE="display: inline">  vDataSet := TXmlDataSetBuilder.newFromText(sInitialXml).build;</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">144</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">145</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">146</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.withDataSet;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">147</TD>
+    <TD><PRE STYLE="display: inline">const</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">148</TD>
+    <TD><PRE STYLE="display: inline">  sInitialXml = '<root><tabela col1="col1 row1" col2="col2 row1"/></root>';</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">149</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">150</TD>
+    <TD><PRE STYLE="display: inline">  {$WARN SYMBOL_PLATFORM OFF}</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">151</TD>
+    <TD><PRE STYLE="display: inline">  ExpectedException := EAbstractError;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">152</TD>
+    <TD><PRE STYLE="display: inline">  {$WARN SYMBOL_PLATFORM ON}</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">153</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">154</TD>
+    <TD><PRE STYLE="display: inline">  TXmlDataSetBuilder.newFromText(sInitialXml).withDataSet(TAbstractDataSet).build;</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">155</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">156</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">157</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.withValidator;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">158</TD>
+    <TD><PRE STYLE="display: inline">const</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">159</TD>
+    <TD><PRE STYLE="display: inline">  sInitialXml = '<root><tabela col1="col1 row1" col2="col2 row1"/></root>';</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">160</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">161</TD>
+    <TD><PRE STYLE="display: inline">  vValidator: IMockXmlValidator;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">162</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">163</TD>
+    <TD><PRE STYLE="display: inline">  vValidator := TMockXmlValidator.Create;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">164</TD>
+    <TD><PRE STYLE="display: inline">  vValidator.setExpectationCalls(1);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">165</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">166</TD>
+    <TD><PRE STYLE="display: inline">  TXmlDataSetBuilder.newFromText(sInitialXml).withValidator(vValidator).build;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">167</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">168</TD>
+    <TD><PRE STYLE="display: inline">  vValidator.checkCalls;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">169</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">170</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">171</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.LoadFromFile_EmptyXML;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">172</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">173</TD>
+    <TD><PRE STYLE="display: inline">  vFile: TextFile;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">174</TD>
+    <TD><PRE STYLE="display: inline">  vFileName: String;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">175</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">176</TD>
+    <TD><PRE STYLE="display: inline">  vFileName := ChangeFileExt(Application.ExeName, 'emptyfile');</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">177</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">178</TD>
+    <TD><PRE STYLE="display: inline">  AssignFile(vFile, vFileName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">179</TD>
+    <TD><PRE STYLE="display: inline">  try</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">180</TD>
+    <TD><PRE STYLE="display: inline">    Rewrite(vFile);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">181</TD>
+    <TD><PRE STYLE="display: inline">  finally</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">182</TD>
+    <TD><PRE STYLE="display: inline">    CloseFile(vFile);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">183</TD>
+    <TD><PRE STYLE="display: inline">  end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">184</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">185</TD>
+    <TD><PRE STYLE="display: inline">  try</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">186</TD>
+    <TD><PRE STYLE="display: inline">    ExpectedException := EEmptyXML;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">187</TD>
+    <TD><PRE STYLE="display: inline">    TXmlDataSetBuilder.newFromFile(vFileName).build;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">188</TD>
+    <TD><PRE STYLE="display: inline">  finally</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">189</TD>
+    <TD><PRE STYLE="display: inline">    Windows.DeleteFile(PChar(vFileName));</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">190</TD>
+    <TD><PRE STYLE="display: inline">  end;</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">191</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">192</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">193</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.LoadFromStream_EmptyXML;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">194</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">195</TD>
+    <TD><PRE STYLE="display: inline">  vStream: TStringStream;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">196</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">197</TD>
+    <TD><PRE STYLE="display: inline">  ExpectedException := EEmptyXML;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">198</TD>
+    <TD><PRE STYLE="display: inline">  vStream := TStringStream.Create('');</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">199</TD>
+    <TD><PRE STYLE="display: inline">  try</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">200</TD>
+    <TD><PRE STYLE="display: inline">    TXmlDataSetBuilder.newFromStream(vStream).build;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">201</TD>
+    <TD><PRE STYLE="display: inline">  finally</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">202</TD>
+    <TD><PRE STYLE="display: inline">    vStream.Free;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">203</TD>
+    <TD><PRE STYLE="display: inline">  end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">204</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">205</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">206</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">207</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.LoadFromXmlText_EmptyXML;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">208</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">209</TD>
+    <TD><PRE STYLE="display: inline">  ExpectedException := EEmptyXML;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">210</TD>
+    <TD><PRE STYLE="display: inline">  TXmlDataSetBuilder.newFromText('').build;</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">211</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">212</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">213</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.InvalidXML_NodeNotClosedStartedTag;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">214</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">215</TD>
+    <TD><PRE STYLE="display: inline">  ExpectedException := EInvalidXML;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">216</TD>
+    <TD><PRE STYLE="display: inline">  TXmlDataSetBuilder.newFromText('<root><root').build;</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">217</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">218</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">219</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestXmlDatasetReader.InvalidXML_NodeNotClosedTag;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">220</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">221</TD>
+    <TD><PRE STYLE="display: inline">  ExpectedException := EInvalidXML;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">222</TD>
+    <TD><PRE STYLE="display: inline">  TXmlDataSetBuilder.newFromText('<root><root>').build;</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">223</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">224</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">225</TD>
+    <TD><PRE STYLE="display: inline">initialization</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">226</TD>
+    <TD><PRE STYLE="display: inline">  TTestXmlDatasetReader.RegisterTest('XmlDatasetReader');</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">227</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">228</TD>
+    <TD><PRE STYLE="display: inline">end.</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">229</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+</TABLE>
+</BODY></HTML>

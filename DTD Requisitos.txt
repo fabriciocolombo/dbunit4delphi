@@ -1,0 +1,3 @@
+- Identificar se o xml possui DTD externo associado. Exemplo de definição: <!DOCTYPE dataset SYSTEM "Person.dtd">
+- Não precisa suportar DTD interno
+

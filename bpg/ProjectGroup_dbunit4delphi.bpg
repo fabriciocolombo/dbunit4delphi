@@ -1,0 +1,26 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = dbunit4delphiR7.bpl dbunit4delphitest.exe GenaratorDataset.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+dbunit4delphitest.exe: ..\unittest\dbunit4delphitest.dpr
+  $(DCC)
+
+dbunit4delphiR7.bpl: ..\packages\dbunit4delphiR7.dpk
+  $(DCC)
+
+GenaratorDataset.exe: ..\Generator\GenaratorDataset.dpr
+  $(DCC)
+
+

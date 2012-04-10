@@ -1,0 +1,566 @@
+<HTML><HEAD><META CONTENT="text/html; charset=ISO-8859-1" HTTP-EQUIV="Content-Type" />
+<TITLE>Delphi CodeCoverage Coverage Report</TITLE> <STYLE TYPE="text/css"> TABLE, TD, TH {border-style: solid;border-color: black;}
+TD, TH { background: white; margin: 0; line-height: 100%; padding-left: 0.5em; padding-right: 0.5em;}
+TD { border-width: 0 1px 0 0;} TH { border-width: 1px 1px 1px 0; }
+P, H1, H2, H3, TH { font-family: verdana,arial,sans-serif; font-size: 10pt;}
+TD { font-family: courier,monospace; font-size: 10pt;}
+TABLE.s TD {padding-left: 0.25em; padding-right: 0.25em; }
+TABLE.s TR.notcovered TD { background: #DDDDFF; }
+TABLE.s TR.nocodegen TD { background: #FFFFEE; }
+TABLE.s TR.covered TD { background: #CCFFCC; }
+TABLE.s {border-width: 1px 0 1px 1px; }
+    </STYLE></HEAD>
+<BODY>
+<P> Coverage report for <STRONG>TestExportDataSet (tests\TestExportDataSet.pas)</STRONG>.</P>
+<P> Generated at 25/07/2011 20:13:25 by DelphiCodeCoverage - an open source tool for Delphi Code Coverage.</P>
+<P> Statistics for tests\TestExportDataSet.pas </P>
+<TABLE CLASS="s" CELLSPACING="0">
+  <TR>
+    <TD>Number of lines covered</TD>
+    <TD ALIGN="RIGHT">37</TD>
+  </TR>
+  <TR>
+    <TD>Number of lines with code gen</TD>
+    <TD ALIGN="RIGHT">39</TD>
+  </TR>
+  <TR>
+    <TD>Line coverage in percent</TD>
+    <TD ALIGN="RIGHT">94%</TD>
+  </TR>
+</TABLE>
+<BR><BR>
+   <TABLE CLASS="s" WIDTH="100%" CELLSPACING="0">
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">1</TD>
+    <TD><PRE STYLE="display: inline">unit TestExportDataSet;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">2</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">3</TD>
+    <TD><PRE STYLE="display: inline">interface</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">4</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">5</TD>
+    <TD><PRE STYLE="display: inline">uses BaseTestCase, Classes;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">6</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">7</TD>
+    <TD><PRE STYLE="display: inline">type</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">8</TD>
+    <TD><PRE STYLE="display: inline">  TTestExportDataSet = class(TBaseTestCase)</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">9</TD>
+    <TD><PRE STYLE="display: inline">  private</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">10</TD>
+    <TD><PRE STYLE="display: inline">  public</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">11</TD>
+    <TD><PRE STYLE="display: inline">  published</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">12</TD>
+    <TD><PRE STYLE="display: inline">    procedure ExportDualTable;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">13</TD>
+    <TD><PRE STYLE="display: inline">    procedure ExportDualAndPersonTable;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">14</TD>
+    <TD><PRE STYLE="display: inline">    procedure ExportDualAndPersonTableFromStringList;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">15</TD>
+    <TD><PRE STYLE="display: inline">    procedure ExportDualWithQuery;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">16</TD>
+    <TD><PRE STYLE="display: inline">    procedure ExportDualTableToFile;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">17</TD>
+    <TD><PRE STYLE="display: inline">  end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">18</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">19</TD>
+    <TD><PRE STYLE="display: inline">implementation</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">20</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">21</TD>
+    <TD><PRE STYLE="display: inline">uses TestUtils, DatabaseConnection, DatabaseConnectionFactory,</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">22</TD>
+    <TD><PRE STYLE="display: inline">  ExportDataSet, TestFramework, SysUtils;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">23</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">24</TD>
+    <TD><PRE STYLE="display: inline">const</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">25</TD>
+    <TD><PRE STYLE="display: inline">  sDualFile = '%Temp%\Dual.xml';</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">26</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">27</TD>
+    <TD><PRE STYLE="display: inline">  DataSetXml = '<DATASET>' + sLineBreak +</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">28</TD>
+    <TD><PRE STYLE="display: inline">               '%s' + sLineBreak +</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">29</TD>
+    <TD><PRE STYLE="display: inline">               '</DATASET>';</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">30</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">31</TD>
+    <TD><PRE STYLE="display: inline">  DualXML = sIdentation + '<DUAL DUMMY="X"/>';</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">32</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">33</TD>
+    <TD><PRE STYLE="display: inline">  PersonXml = sIdentation + '<PERSON ID="1" NAME="Fabricio" BIRTHDATE="1983-07-15" SALARY="1543,21"/>';</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">34</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">35</TD>
+    <TD><PRE STYLE="display: inline">{ TTestExportDataSet }</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">36</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">37</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestExportDataSet.ExportDualAndPersonTable;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">38</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">39</TD>
+    <TD><PRE STYLE="display: inline">  vExpectedXml,</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">40</TD>
+    <TD><PRE STYLE="display: inline">  vXmlDataSet: String;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">41</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">42</TD>
+    <TD><PRE STYLE="display: inline">  vXmlDataSet := TDataExporter</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">43</TD>
+    <TD><PRE STYLE="display: inline">                  .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">44</TD>
+    <TD><PRE STYLE="display: inline">                  .WithMultipleTables(['Dual', 'Person']).ExportAsXmlText;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">45</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">46</TD>
+    <TD><PRE STYLE="display: inline">  vExpectedXml := Format(DataSetXml, [DualXML + sLineBreak + PersonXml]);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">47</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">48</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString(vExpectedXml, vXmlDataSet);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">49</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">50</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">51</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestExportDataSet.ExportDualAndPersonTableFromStringList;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">52</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">53</TD>
+    <TD><PRE STYLE="display: inline">  vExpectedXml,</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">54</TD>
+    <TD><PRE STYLE="display: inline">  vXmlDataSet: String;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">55</TD>
+    <TD><PRE STYLE="display: inline">  vList: TStrings;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">56</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">57</TD>
+    <TD><PRE STYLE="display: inline">  vList := TStringList.Create;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">58</TD>
+    <TD><PRE STYLE="display: inline">  try</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">59</TD>
+    <TD><PRE STYLE="display: inline">    vList.Add('Dual');</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">60</TD>
+    <TD><PRE STYLE="display: inline">    vList.Add('Person');</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">61</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">62</TD>
+    <TD><PRE STYLE="display: inline">    vXmlDataSet := TDataExporter</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">63</TD>
+    <TD><PRE STYLE="display: inline">                    .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">64</TD>
+    <TD><PRE STYLE="display: inline">                    .WithMultipleTables(vList).ExportAsXmlText;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">65</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">66</TD>
+    <TD><PRE STYLE="display: inline">    vExpectedXml := Format(DataSetXml, [DualXML + sLineBreak + PersonXml]);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">67</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">68</TD>
+    <TD><PRE STYLE="display: inline">    CheckEqualsString(vExpectedXml, vXmlDataSet);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">69</TD>
+    <TD><PRE STYLE="display: inline">  finally</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">70</TD>
+    <TD><PRE STYLE="display: inline">    vList.Free;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">71</TD>
+    <TD><PRE STYLE="display: inline">  end;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">72</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">73</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">74</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestExportDataSet.ExportDualTable;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">75</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">76</TD>
+    <TD><PRE STYLE="display: inline">  vExpectedXml,</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">77</TD>
+    <TD><PRE STYLE="display: inline">  vXmlDataSet: String;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">78</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">79</TD>
+    <TD><PRE STYLE="display: inline">  vXmlDataSet := TDataExporter</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">80</TD>
+    <TD><PRE STYLE="display: inline">                  .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">81</TD>
+    <TD><PRE STYLE="display: inline">                  .WithTableName('Dual').ExportAsXmlText;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">82</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">83</TD>
+    <TD><PRE STYLE="display: inline">  vExpectedXml := Format(DataSetXml, [DualXML]);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">84</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">85</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString(vExpectedXml, vXmlDataSet);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">86</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">87</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">88</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestExportDataSet.ExportDualTableToFile;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">89</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">90</TD>
+    <TD><PRE STYLE="display: inline">  vExpectedXml,</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">91</TD>
+    <TD><PRE STYLE="display: inline">  vFileName: String;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">92</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">93</TD>
+    <TD><PRE STYLE="display: inline">  vFileName := ExtractFilePath(ParamStr(0)) + 'exportdata.xml';</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">94</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">95</TD>
+    <TD><PRE STYLE="display: inline">  if FileExists(vFileName) then</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">96</TD>
+    <TD><PRE STYLE="display: inline">  begin</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">97</TD>
+    <TD><PRE STYLE="display: inline">    if not DeleteFile(vFileName) then</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">98</TD>
+    <TD><PRE STYLE="display: inline">      Fail(Format('Can not delete de file "%s". Test aborted.',[vFileName]));</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">99</TD>
+    <TD><PRE STYLE="display: inline">  end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">100</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">101</TD>
+    <TD><PRE STYLE="display: inline">  vExpectedXml := Format(DataSetXml, [DualXML]);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">102</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">103</TD>
+    <TD><PRE STYLE="display: inline">  TDataExporter</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">104</TD>
+    <TD><PRE STYLE="display: inline">    .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">105</TD>
+    <TD><PRE STYLE="display: inline">    .WithTableName('Dual')</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">106</TD>
+    <TD><PRE STYLE="display: inline">      .ExportToXmlFile(vFileName);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">107</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">108</TD>
+    <TD><PRE STYLE="display: inline">  CheckTrue(FileExists(vFileName), Format('File "%s" are not created.',[vFileName]));</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">109</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">110</TD>
+    <TD><PRE STYLE="display: inline">  CheckTrue(TTestUtils.EqualsFileContent(vFileName, vExpectedXml), 'File content is invalid.');</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">111</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">112</TD>
+    <TD><PRE STYLE="display: inline">  DeleteFile(vFileName);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">113</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">114</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">115</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestExportDataSet.ExportDualWithQuery;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">116</TD>
+    <TD><PRE STYLE="display: inline">var</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">117</TD>
+    <TD><PRE STYLE="display: inline">  vExpectedXml,</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">118</TD>
+    <TD><PRE STYLE="display: inline">  vXmlDataSet: String;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">119</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">120</TD>
+    <TD><PRE STYLE="display: inline">  vXmlDataSet := TDataExporter</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">121</TD>
+    <TD><PRE STYLE="display: inline">                  .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">122</TD>
+    <TD><PRE STYLE="display: inline">                  .WithQueryText('Dual', 'SELECT * From Dual').ExportAsXmlText;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">123</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">124</TD>
+    <TD><PRE STYLE="display: inline">  vExpectedXml := Format(DataSetXml, [DualXML]);</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">125</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">126</TD>
+    <TD><PRE STYLE="display: inline">  CheckEqualsString(vExpectedXml, vXmlDataSet);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">127</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">128</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">129</TD>
+    <TD><PRE STYLE="display: inline">initialization</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">130</TD>
+    <TD><PRE STYLE="display: inline">  TTestExportDataSet.RegisterTest('ExportDataSet');</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">131</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">132</TD>
+    <TD><PRE STYLE="display: inline">end.</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">133</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+</TABLE>
+</BODY></HTML>

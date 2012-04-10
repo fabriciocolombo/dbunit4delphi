@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<report>
+  <stats>
+    <packages value="25"/>
+    <classes value="0"/>
+    <methods value="0"/>
+    <srcfiles value="25"/>
+    <srclines value="880"/>
+  </stats>
+  <data>
+    <all name="all classes">
+      <coverage type="class, %" value="0%   (0/0)"/>
+      <coverage type="method, %" value="0%   (0/0)"/>
+      <coverage type="block, %" value="0%   (0/0)"/>
+      <coverage type="line, %" value="93%  (824/880)"/>
+      <package name="MockDatabaseConnection">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="58%  (38/65)"/>
+        <srcfile name="mocks\MockDatabaseConnection.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="58%  (38/65)"/>
+        </srcfile>
+      </package>
+      <package name="MockDatabaseOperation">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="91%  (11/12)"/>
+        <srcfile name="mocks\MockDatabaseOperation.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="91%  (11/12)"/>
+        </srcfile>
+      </package>
+      <package name="MockDataSet">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="87%  (7/8)"/>
+        <srcfile name="mocks\MockDataSet.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="87%  (7/8)"/>
+        </srcfile>
+      </package>
+      <package name="MockXmlValidator">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="91%  (11/12)"/>
+        <srcfile name="mocks\MockXmlValidator.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="91%  (11/12)"/>
+        </srcfile>
+      </package>
+      <package name="SampleDBTestCase">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (34/34)"/>
+        <srcfile name="tests\SampleDBTestCase.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (34/34)"/>
+        </srcfile>
+      </package>
+      <package name="StubDatabaseConfig">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (7/7)"/>
+        <srcfile name="stubs\StubDatabaseConfig.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (7/7)"/>
+        </srcfile>
+      </package>
+      <package name="StubDatabaseConfigDBX">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (11/11)"/>
+        <srcfile name="stubs\StubDatabaseConfigDBX.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (11/11)"/>
+        </srcfile>
+      </package>
+      <package name="StubDataset">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (12/12)"/>
+        <srcfile name="stubs\StubDataset.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (12/12)"/>
+        </srcfile>
+      </package>
+      <package name="TestCompositeOperation">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (9/9)"/>
+        <srcfile name="tests\TestCompositeOperation.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (9/9)"/>
+        </srcfile>
+      </package>
+      <package name="TestDatabaseConnection">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="85%  (12/14)"/>
+        <srcfile name="tests\TestDatabaseConnection.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="85%  (12/14)"/>
+        </srcfile>
+      </package>
+      <package name="TestDatabaseConnectionDBX">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="96%  (64/66)"/>
+        <srcfile name="tests\TestDatabaseConnectionDBX.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="96%  (64/66)"/>
+        </srcfile>
+      </package>
+      <package name="TestDataSetDecorator">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (59/59)"/>
+        <srcfile name="tests\TestDataSetDecorator.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (59/59)"/>
+        </srcfile>
+      </package>
+      <package name="TestDataSetIterator">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="95%  (45/47)"/>
+        <srcfile name="tests\TestDataSetIterator.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="95%  (45/47)"/>
+        </srcfile>
+      </package>
+      <package name="TestDataSetListBuilder">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (43/43)"/>
+        <srcfile name="tests\TestDataSetListBuilder.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (43/43)"/>
+        </srcfile>
+      </package>
+      <package name="TestDeleteOperation">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (18/18)"/>
+        <srcfile name="tests\TestDeleteOperation.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (18/18)"/>
+        </srcfile>
+      </package>
+      <package name="TesteMetadata">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="96%  (25/26)"/>
+        <srcfile name="tests\TesteMetadata.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="96%  (25/26)"/>
+        </srcfile>
+      </package>
+      <package name="TestExportDataSet">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="94%  (37/39)"/>
+        <srcfile name="tests\TestExportDataSet.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="94%  (37/39)"/>
+        </srcfile>
+      </package>
+      <package name="TestFormatter">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (75/75)"/>
+        <srcfile name="tests\TestFormatter.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (75/75)"/>
+        </srcfile>
+      </package>
+      <package name="TestInsertOperation">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (30/30)"/>
+        <srcfile name="tests\TestInsertOperation.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (30/30)"/>
+        </srcfile>
+      </package>
+      <package name="TestMockObjects">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="85%  (24/28)"/>
+        <srcfile name="tests\TestMockObjects.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="85%  (24/28)"/>
+        </srcfile>
+      </package>
+      <package name="TestRefreshOperation">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (13/13)"/>
+        <srcfile name="tests\TestRefreshOperation.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (13/13)"/>
+        </srcfile>
+      </package>
+      <package name="TestStatementBuilder">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (74/74)"/>
+        <srcfile name="tests\TestStatementBuilder.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (74/74)"/>
+        </srcfile>
+      </package>
+      <package name="TestUpdateOperation">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="100% (11/11)"/>
+        <srcfile name="tests\TestUpdateOperation.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="100% (11/11)"/>
+        </srcfile>
+      </package>
+      <package name="TestXmlDataSet">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="91%  (53/58)"/>
+        <srcfile name="tests\TestXmlDataSet.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="91%  (53/58)"/>
+        </srcfile>
+      </package>
+      <package name="TestXmlDatasetReader">
+        <coverage type="class, %" value="0%   (0/0)"/>
+        <coverage type="method, %" value="0%   (0/0)"/>
+        <coverage type="block, %" value="0%   (0/0)"/>
+        <coverage type="line, %" value="92%  (101/109)"/>
+        <srcfile name="tests\TestXmlDatasetReader.pas">
+          <coverage type="class, %" value="0%   (0/0)"/>
+          <coverage type="method, %" value="0%   (0/0)"/>
+          <coverage type="block, %" value="0%   (0/0)"/>
+          <coverage type="line, %" value="92%  (101/109)"/>
+        </srcfile>
+      </package>
+    </all>
+  </data>
+</report>

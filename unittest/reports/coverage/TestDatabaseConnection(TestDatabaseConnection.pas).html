@@ -1,0 +1,202 @@
+<HTML><HEAD><META CONTENT="text/html; charset=ISO-8859-1" HTTP-EQUIV="Content-Type" />
+<TITLE>Delphi CodeCoverage Coverage Report</TITLE> <STYLE TYPE="text/css"> TABLE, TD, TH {border-style: solid;border-color: black;}
+TD, TH { background: white; margin: 0; line-height: 100%; padding-left: 0.5em; padding-right: 0.5em;}
+TD { border-width: 0 1px 0 0;} TH { border-width: 1px 1px 1px 0; }
+P, H1, H2, H3, TH { font-family: verdana,arial,sans-serif; font-size: 10pt;}
+TD { font-family: courier,monospace; font-size: 10pt;}
+TABLE.s TD {padding-left: 0.25em; padding-right: 0.25em; }
+TABLE.s TR.notcovered TD { background: #DDDDFF; }
+TABLE.s TR.nocodegen TD { background: #FFFFEE; }
+TABLE.s TR.covered TD { background: #CCFFCC; }
+TABLE.s {border-width: 1px 0 1px 1px; }
+    </STYLE></HEAD>
+<BODY>
+<P> Coverage report for <STRONG>TestDatabaseConnection (tests\TestDatabaseConnection.pas)</STRONG>.</P>
+<P> Generated at 25/07/2011 20:13:25 by DelphiCodeCoverage - an open source tool for Delphi Code Coverage.</P>
+<P> Statistics for tests\TestDatabaseConnection.pas </P>
+<TABLE CLASS="s" CELLSPACING="0">
+  <TR>
+    <TD>Number of lines covered</TD>
+    <TD ALIGN="RIGHT">12</TD>
+  </TR>
+  <TR>
+    <TD>Number of lines with code gen</TD>
+    <TD ALIGN="RIGHT">14</TD>
+  </TR>
+  <TR>
+    <TD>Line coverage in percent</TD>
+    <TD ALIGN="RIGHT">85%</TD>
+  </TR>
+</TABLE>
+<BR><BR>
+   <TABLE CLASS="s" WIDTH="100%" CELLSPACING="0">
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">1</TD>
+    <TD><PRE STYLE="display: inline">unit TestDatabaseConnection;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">2</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">3</TD>
+    <TD><PRE STYLE="display: inline">interface</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">4</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">5</TD>
+    <TD><PRE STYLE="display: inline">uses BaseTestCase, DatabaseConnection, Exceptions, DatabaseConnectionFactory,</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">6</TD>
+    <TD><PRE STYLE="display: inline">     DatabaseConfig, DatabaseConnectionType, StubDatabaseConfig;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">7</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">8</TD>
+    <TD><PRE STYLE="display: inline">type</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">9</TD>
+    <TD><PRE STYLE="display: inline">  TTestDatabaseConnection = class(TBaseTestCase)</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">10</TD>
+    <TD><PRE STYLE="display: inline">  private</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">11</TD>
+    <TD><PRE STYLE="display: inline">  public</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">12</TD>
+    <TD><PRE STYLE="display: inline">  published</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">13</TD>
+    <TD><PRE STYLE="display: inline">    procedure assignedFactory;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">14</TD>
+    <TD><PRE STYLE="display: inline">    procedure invalidDatabaseConnectionType;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">15</TD>
+    <TD><PRE STYLE="display: inline">    procedure invalidConfiguration;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">16</TD>
+    <TD><PRE STYLE="display: inline">  end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">17</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">18</TD>
+    <TD><PRE STYLE="display: inline">implementation</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">19</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">20</TD>
+    <TD><PRE STYLE="display: inline">{ TTestDatabaseConnection }</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">21</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">22</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestDatabaseConnection.assignedFactory;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">23</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">24</TD>
+    <TD><PRE STYLE="display: inline">  CheckNotNull(ConnectionFactory);</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">25</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">26</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">27</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestDatabaseConnection.invalidConfiguration;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">28</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">29</TD>
+    <TD><PRE STYLE="display: inline">  ExpectedException := EInvalidDatabaseConfiguration;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">30</TD>
+    <TD><PRE STYLE="display: inline">  ConnectionFactory.newConnection(TDatabaseConfig.newConfig(dctDBX));</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">31</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">32</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">33</TD>
+    <TD><PRE STYLE="display: inline">procedure TTestDatabaseConnection.invalidDatabaseConnectionType;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">34</TD>
+    <TD><PRE STYLE="display: inline">begin</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">35</TD>
+    <TD><PRE STYLE="display: inline">  ExpectedException := EInvalidDatabaseConnectionType;</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">36</TD>
+    <TD><PRE STYLE="display: inline">  ConnectionFactory.newConnection(TDatabaseConfig.newConfig(TDatabaseConnectionType(-1)));</PRE></TD>
+  </TR>
+  <TR CLASS="notcovered">
+    <TD ALIGN="RIGHT" CLASS="1">37</TD>
+    <TD><PRE STYLE="display: inline">end;</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">38</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">39</TD>
+    <TD><PRE STYLE="display: inline">initialization</PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">40</TD>
+    <TD><PRE STYLE="display: inline">  TTestDatabaseConnection.RegisterTest('DatabaseConnection');</PRE></TD>
+  </TR>
+  <TR CLASS="nocodegen">
+    <TD ALIGN="RIGHT" CLASS="1">41</TD>
+    <TD><PRE STYLE="display: inline"></PRE></TD>
+  </TR>
+  <TR CLASS="covered">
+    <TD ALIGN="RIGHT" CLASS="1">42</TD>
+    <TD><PRE STYLE="display: inline">end.</PRE></TD>
+  </TR>
+</TABLE>
+</BODY></HTML>

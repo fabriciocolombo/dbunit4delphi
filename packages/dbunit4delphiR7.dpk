@@ -1,0 +1,84 @@
+package dbunit4delphiR7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'DBUnit4Delphi'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  dbexpress,
+  vcl,
+  dsnap,
+  xmlrtl,
+  inet;
+
+contains
+  CompatibilityClasses in '..\src\CompatibilityClasses.pas',
+  Exceptions in '..\src\Exceptions.pas',
+  Formatter in '..\src\Formatter.pas',
+  DatabaseConfig in '..\src\database\DatabaseConfig.pas',
+  DatabaseConnection in '..\src\database\DatabaseConnection.pas',
+  DatabaseConnectionFactory in '..\src\database\DatabaseConnectionFactory.pas',
+  DatabaseConnectionType in '..\src\database\DatabaseConnectionType.pas',
+  DataSet in '..\src\database\DataSet.pas',
+  DataSetDecorator in '..\src\database\DataSetDecorator.pas',
+  DataSetIterator in '..\src\database\DataSetIterator.pas',
+  DataSetListBuilder in '..\src\database\DataSetListBuilder.pas',
+  ExportDataSet in '..\src\database\ExportDataSet.pas',
+  Field in '..\src\database\Field.pas',
+  FlatXmlDataSet in '..\src\database\FlatXmlDataSet.pas',
+  Query in '..\src\database\Query.pas',
+  Table in '..\src\database\Table.pas',
+  XmlClientDataSet in '..\src\database\XmlClientDataSet.pas',
+  DatabaseConfigDBX in '..\src\database\dbx\DatabaseConfigDBX.pas',
+  DatabaseConnectionDBX in '..\src\database\dbx\DatabaseConnectionDBX.pas',
+  QueryDBX in '..\src\database\dbx\QueryDBX.pas',
+  UpdateOperation in '..\src\database\operation\UpdateOperation.pas',
+  CompositeOperation in '..\src\database\operation\CompositeOperation.pas',
+  DatabaseOperation in '..\src\database\operation\DatabaseOperation.pas',
+  DeleteAllOperation in '..\src\database\operation\DeleteAllOperation.pas',
+  DeleteOperation in '..\src\database\operation\DeleteOperation.pas',
+  InsertOperation in '..\src\database\operation\InsertOperation.pas',
+  NoneOperation in '..\src\database\operation\NoneOperation.pas',
+  RefreshOperation in '..\src\database\operation\RefreshOperation.pas',
+  LoggerFactory in '..\src\logger\LoggerFactory.pas',
+  Logger in '..\src\logger\Logger.pas',
+  StatementUpdateBuilder in '..\src\statement\StatementUpdateBuilder.pas',
+  CustomStatementBuilder in '..\src\statement\CustomStatementBuilder.pas',
+  Statement in '..\src\statement\Statement.pas',
+  StatementBuilder in '..\src\statement\StatementBuilder.pas',
+  StatementBuilderIntf in '..\src\statement\StatementBuilderIntf.pas',
+  StatementDeleteBuilder in '..\src\statement\StatementDeleteBuilder.pas',
+  StatementInsertBuilder in '..\src\statement\StatementInsertBuilder.pas',
+  StatementSelectBuilder in '..\src\statement\StatementSelectBuilder.pas',
+  DBTestCase in '..\src\testcase\DBTestCase.pas',
+  XmlDatasetReader in '..\src\xml\XmlDatasetReader.pas',
+  XMLDomParseError in '..\src\xml\XMLDomParseError.pas',
+  XmlValidator in '..\src\xml\XmlValidator.pas',
+  BaseTestCase in '..\src\testcase\BaseTestCase.pas',
+  AppUtils in '..\src\util\AppUtils.pas';
+
+end.

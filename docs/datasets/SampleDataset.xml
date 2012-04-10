@@ -1,0 +1,9 @@
+<!DOCTYPE dataset SYSTEM "SampleDTD.dtd">
+<dataset>
+	<TEST_TABLE COL0="row 0 col 0" COL1="row 0 col 1" COL2="row 0 col 2" />
+	<TEST_TABLE COL0="row 1 col 0" COL1="row 1 col 1" />
+	<SECOND_TABLE COL0="row 0 col 0" COL1="row 0 col 1" />
+	<!-- raise an exception 
+	<EMPTY_TABLE /> 
+	-->
+</dataset>

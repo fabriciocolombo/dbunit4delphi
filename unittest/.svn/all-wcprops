@@ -1,0 +1,57 @@
+K 26
+svn:wc:ra_dav:activity-url
+V 20
+/svn/repos/!svn/act/
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/repos/!svn/ver/23/dbunit4delphi/trunk/unittest
+END
+dbunit4delphitest.dsk
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/42/dbunit4delphi/trunk/unittest/dbunit4delphitest.dsk
+END
+dunit.ini
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/repos/!svn/ver/9/dbunit4delphi/trunk/unittest/dunit.ini
+END
+TestUtils.pas
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/!svn/ver/47/dbunit4delphi/trunk/unittest/TestUtils.pas
+END
+dbunit4delphitest.dpr
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/46/dbunit4delphi/trunk/unittest/dbunit4delphitest.dpr
+END
+dbunit4delphitest.dof
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/46/dbunit4delphi/trunk/unittest/dbunit4delphitest.dof
+END
+dbunit4delphitest.res
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/33/dbunit4delphi/trunk/unittest/dbunit4delphitest.res
+END
+TestResources.pas
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/!svn/ver/9/dbunit4delphi/trunk/unittest/TestResources.pas
+END
+dbunit4delphitest.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/46/dbunit4delphi/trunk/unittest/dbunit4delphitest.cfg
+END

@@ -1,0 +1,5 @@
+<!DOCTYPE dataset SYSTEM "Person.dtd">
+<dataset>
+	<PERSON id="1" name="FABRICIO" birthdate="1983-04-15" salary="2153,47"/>
+	<PERSON id="2" name="PEDRO" birthdate="1986-07-23" salary="1376,54"/>
+</dataset>

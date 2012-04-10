@@ -1,0 +1,39 @@
+- DONE - Criar classe de teste estendendo TTestCase(DUnit) para simplificar a utilização do framework;
+- DONE - Carregar dados do arquivo xml para atualização da base de dados;
+- DONE - Suporte a conexão DBX
+- DONE - Suporte a operações de Insert, Update, Delete baseado nos dados, Delete all e Refresh(Update or Insert)
+- DONE - Implementação de testes de cobertura
+
+- Suporte a operações: CloseConnection, TransactionOperation e TruncateTableOperation
+
+- Validar xml usando xsd ou dtd. Provavelmente dtd por ser mais simples.
+- Suporte a conexão ZeosLib, que se conecta a N databases diferentes.
+- Suporte a operações nativas de bulk loader: Oracle Sql Loader, Posgres Copy, etc
+- Suporte a campo identity do banco MSSQL
+- Geração do DTD lendo o metadata da tabela
+- Avaliar outros formatos de dados, como csv, json ou outro.
+
+- Definir framework de log
+- Introduzir camada de abstração que encapsule o framework de log, podendo o mesmo ser desativado para evitar dependências externas
+- Implementar documentação do código
+- Criação de tutoriais
+- Definir licensa
+- Deploy no code.google.com
+- Analisar viabilidade de inclusão de framework de mock
+
+- Isolar camada de acesso a banco de dados em um pacote independente, visto que é possível a necessidade de reutilizá-lo em outros projetos
+
+- Geração do XML lendo os registros da tabela
+  - Recurperar informações de Metadata
+  - Exportar Várias Tabelas na sequencia pré-definida
+  - Gerar ordem das tabelas de acordo com a dependencia
+  - Cria utilitário de exportação
+  
+- Carregar configurações de conexão a partir de arquivo INI
+- Criar um ConnectionProvider que utilize o ConnectionFactory(tornar privado), sendo que o ConnectionProvider deve ler a configuração 
+  do arquivo INI apenas uma vez. Deve ser fornecido mecanismo para configurar o ConnectionProvider na ausência do arquivo INI. 
+- Criar um ConnectionPool para utilizar pool de conexões. O ConnectionProvider pode ser configurado para utilizar o pool.
+
+DUNIT
+ - Verificar melhoria de performance se executado em paralelo, tirando melhor proveito dos processadores atuais(multi core) e do 
+   reaproveitamento do pool de conexões
