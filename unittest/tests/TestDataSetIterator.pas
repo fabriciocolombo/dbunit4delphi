@@ -2,10 +2,10 @@ unit TestDataSetIterator;
 
 interface
 
-uses BaseTestCase, DataSet, DataSetIterator, Classes;
+uses TestCaseExtension,  DataSet, DataSetIterator, Classes;
 
 type
-  TTestDataSetIterator = class(TBaseTestCase)
+  TTestDataSetIterator = class(TTestCaseExtension)
   private
   public
   published

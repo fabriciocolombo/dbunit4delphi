@@ -2,7 +2,7 @@ unit SampleDBTestCase;
 
 interface
 
-uses BaseTestCase, DBTestCase, DatabaseConnection, DataSet, DataSetDecorator,
+uses TestCaseExtension,  DBTestCase, DatabaseConnection, DataSet, DataSetDecorator,
   DataSetListBuilder, XmlClientDataSet, XmlDatasetReader, XmlValidator,
   DatabaseConfig, MockDatabaseConnection, DatabaseOperation, Windows;
 

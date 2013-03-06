@@ -7,6 +7,10 @@ uses
   SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs,
   DatabaseConnectionType;
 
+const
+  DB_CONFIG = 'DBCONFIG';
+  DB_EXTRA_PARAMS = 'EXTRA_PARAMS';
+
 type
   IDatabaseConfig = interface
   ['{83B617CF-A429-4E26-B502-3CDC8818DA49}']
@@ -28,6 +32,8 @@ type
 
     function ConfigIsOk: Boolean;
     function toString: String;
+
+    procedure LoadFromFile(const AFileName: String);    
   end;
 
   TDatabaseConfig = class(TInterfacedObject, IDatabaseConfig)
@@ -59,6 +65,8 @@ type
     constructor Create;virtual;
 
     class function newConfig(AType: TDatabaseConnectionType): IDatabaseConfig;
+
+    procedure LoadFromFile(const AFileName: String);virtual;abstract;
   end;
 
   //TODO - Configurar a conexão a partir de uma conexão pré-existente

@@ -2,11 +2,11 @@ unit TestRefreshOperation;
 
 interface
 
-uses BaseTestCase, DatabaseConnection, MockDatabaseOperation, DataSet,
+uses TestCaseExtension,  DatabaseConnection, MockDatabaseOperation, DataSet,
   DatabaseOperation;
 
 type
-  TTestRefreshOperation = class(TBaseTestCase)
+  TTestRefreshOperation = class(TTestCaseExtension)
   private
   published
     procedure RefreshPerson;

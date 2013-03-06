@@ -32,17 +32,10 @@ var
 begin
   inherited;
   DBConfig := TDatabaseConfigDBX.Create;
-  DBConfig.DriverName := 'Interbase';
-  DBConfig.GetDriverFunc := 'getSQLDriverINTERBASE';
-  DBConfig.LibraryName := 'dbexpint.dll';
-  DBConfig.VendorLib := 'fbembed.dll';
-
-  DBConfig.Database := ExtractFilePath(Application.ExeName) + '..\unittest\db\SAMPLE.FDB';
-  DBConfig.UserName := 'sysdba';
-  DBConfig.Password := 'masterkey';
-  DBConfig.Params.Values['SQLDialect'] := '3';
+  DBConfig.LoadFromFile('DBConfig.ini');
 
   FConnection := ConnectionFactory.newConnection(DBConfig);
+  FConnection.open;
 end;
 
 destructor TDMGenerator.Destroy;

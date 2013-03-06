@@ -2,13 +2,13 @@ unit TestStatementBuilder;
 
 interface
 
-uses BaseTestCase,
+uses TestCaseExtension,
      Statement, StatementBuilder, StatementDeleteBuilder, StatementSelectBuilder,
      StatementUpdateBuilder, StatementInsertBuilder,
      Formatter;
 
 type
-  TTestStatementBuilder = class(TBaseTestCase)
+  TTestStatementBuilder = class(TTestCaseExtension)
   private
   public
   published

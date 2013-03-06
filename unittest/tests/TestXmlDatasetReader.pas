@@ -2,11 +2,11 @@ unit TestXmlDatasetReader;
 
 interface
 
-uses BaseTestCase, DataSet, DataSetDecorator, DataSetListBuilder, XmlClientDataSet,
+uses TestCaseExtension,  DataSet, DataSetDecorator, DataSetListBuilder, XmlClientDataSet,
   XmlDatasetReader, XmlValidator, TestResources, Classes, Forms, Windows;
 
 type
-  TTestXmlDatasetReader = class(TBaseTestCase)
+  TTestXmlDatasetReader = class(TTestCaseExtension)
   private
   public
   published
@@ -226,4 +226,3 @@ initialization
   TTestXmlDatasetReader.RegisterTest('XmlDatasetReader');
 
 end.
-

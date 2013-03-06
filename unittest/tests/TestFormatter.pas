@@ -2,10 +2,10 @@ unit TestFormatter;
 
 interface
 
-uses BaseTestCase, Formatter, DB, DBClient;
+uses TestCaseExtension, Formatter, DB, DBClient;
 
 type
-  TTestFormatter = class(TBaseTestCase)
+  TTestFormatter = class(TTestCaseExtension)
   private
     function newField(AFieldType: TFieldType): TField;
   public

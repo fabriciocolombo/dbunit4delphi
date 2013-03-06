@@ -2,10 +2,10 @@ unit TestXmlDataSet;
 
 interface
 
-uses BaseTestCase, XmlClientDataSet, DataSet, DB;
+uses TestCaseExtension,  XmlClientDataSet, DataSet, DB;
 
 type
-  TTestXmlDataSet = class(TBaseTestCase)
+  TTestXmlDataSet = class(TTestCaseExtension)
   private
     FDataSet: IDataSet;
   protected

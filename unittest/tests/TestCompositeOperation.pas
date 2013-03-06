@@ -2,10 +2,10 @@ unit TestCompositeOperation;
 
 interface
 
-uses BaseTestCase, DatabaseOperation, MockDatabaseConnection;
+uses TestCaseExtension,  DatabaseOperation, MockDatabaseConnection;
 
 type
-  TTestCompositeOperation = class(TBaseTestCase)
+  TTestCompositeOperation = class(TTestCaseExtension)
   private
   public
   published

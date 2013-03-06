@@ -2,11 +2,11 @@ unit DBTestCase;
 
 interface
 
-uses BaseTestCase, DatabaseOperation, DatabaseConnection, DataSet, DatabaseConnectionType,
+uses TestCaseExtension, DatabaseOperation, DatabaseConnection, DataSet, DatabaseConnectionType,
      DatabaseConnectionFactory, DatabaseConfig;
 
 type
-  TDBTestCase = class(TBaseTestCase)
+  TDBTestCase = class(TTestCaseExtension)
   private
     FConnection: IDatabaseConnection;
   protected

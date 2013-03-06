@@ -2,10 +2,10 @@ unit TestDataSetListBuilder;
 
 interface
 
-uses BaseTestCase, DataSetListBuilder, DataSet;
+uses TestCaseExtension,  DataSetListBuilder, DataSet;
 
 type
-  TTestDataSetListBuilder = class(TBaseTestCase)
+  TTestDataSetListBuilder = class(TTestCaseExtension)
   private
   published
     procedure oneTable;

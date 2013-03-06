@@ -97,7 +97,7 @@ PackageDCPOutputDir=
 SearchPath=..\dcu
 Packages=vcl;rtl;vclx;indy;inet;xmlrtl;vclie;inetdbbde;inetdbxpress;dbrtl;dsnap;dsnapcon;vcldb;soaprtl;VclSmp;dbexpress;dbxcds;inetdb;bdertl;vcldbx;webdsnap;websnap;adortl;ibxpress;teeui;teedb;tee;dss;visualclx;visualdbclx;vclactnband;vclshlctrls;IntrawebDB_50_70;Intraweb_50_70;Rave50CLX;Rave50VCL;dclOfficeXP
 Conditionals=
-DebugSourceDirs=..\src;..\src\database;..\src\database\operation;..\src\logger;..\src\statement;..\src\testcase;..\src\database\dbx
+DebugSourceDirs=..\src;..\src\database;..\src\database\operation;..\src\logger;..\src\statement;..\src\testcase;..\src\database\dbx;..\lib\DUnit\src;..\lib\DUnit-Extension\src
 UsePackages=0
 [Parameters]
 RunParams=
@@ -134,11 +134,10 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
-[Excluded Packages]
-c:\arquivos de programas\borland\delphi7\Bin\DBWEBXPRT.BPL=Borland Web Wizard Package
 [HistoryLists\hlDebugSourcePath]
-Count=1
-Item0=..\src;..\src\database;..\src\database\operation;..\src\logger;..\src\statement;..\src\testcase;..\src\database\dbx
+Count=2
+Item0=..\src;..\src\database;..\src\database\operation;..\src\logger;..\src\statement;..\src\testcase;..\src\database\dbx;..\lib\DUnit\src;..\lib\DUnit-Extension\src
+Item1=..\src;..\src\database;..\src\database\operation;..\src\logger;..\src\statement;..\src\testcase;..\src\database\dbx
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;

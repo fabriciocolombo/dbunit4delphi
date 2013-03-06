@@ -1,8 +1,8 @@
 object Frm_ExportDataset: TFrm_ExportDataset
-  Left = 334
-  Top = 261
-  Width = 642
-  Height = 534
+  Left = 481
+  Top = 118
+  Width = 647
+  Height = 542
   Caption = 'Export Dataset'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,36 +11,37 @@ object Frm_ExportDataset: TFrm_ExportDataset
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   DesignSize = (
-    634
-    507)
+    631
+    504)
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl: TPageControl
     Left = 0
     Top = 0
-    Width = 634
-    Height = 473
-    ActivePage = TabSheet_Tables
+    Width = 639
+    Height = 467
+    ActivePage = TabSheet_Fields
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     TabStop = False
     object TabSheet_Tables: TTabSheet
       Caption = 'Tables'
       DesignSize = (
-        626
-        445)
+        631
+        439)
       object GroupBox1: TGroupBox
         Left = 0
         Top = 0
         Width = 281
-        Height = 441
+        Height = 435
         Anchors = [akLeft, akTop, akBottom]
         Caption = ' Tables '
         TabOrder = 0
         DesignSize = (
           281
-          441)
+          435)
         object Label1: TLabel
           Left = 13
           Top = 23
@@ -50,7 +51,7 @@ object Frm_ExportDataset: TFrm_ExportDataset
         end
         object btnLoadTables: TSpeedButton
           Left = 200
-          Top = 411
+          Top = 406
           Width = 75
           Height = 22
           Caption = 'Refresh'
@@ -67,7 +68,7 @@ object Frm_ExportDataset: TFrm_ExportDataset
           Left = 12
           Top = 45
           Width = 261
-          Height = 361
+          Height = 355
           Anchors = [akLeft, akTop, akBottom]
           DataSource = dsTables
           Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
@@ -92,19 +93,19 @@ object Frm_ExportDataset: TFrm_ExportDataset
       object GroupBox3: TGroupBox
         Left = 288
         Top = 0
-        Width = 330
-        Height = 441
+        Width = 335
+        Height = 435
         Anchors = [akLeft, akTop, akRight, akBottom]
         Caption = ' Selected Tables '
         TabOrder = 1
         DesignSize = (
-          330
-          441)
+          335
+          435)
         object ListBox_Tables: TListBox
           Left = 8
           Top = 20
-          Width = 314
-          Height = 300
+          Width = 319
+          Height = 294
           Anchors = [akLeft, akTop, akRight, akBottom]
           ItemHeight = 13
           TabOrder = 0
@@ -112,19 +113,19 @@ object Frm_ExportDataset: TFrm_ExportDataset
         end
         object GroupBox_WhereClause: TGroupBox
           Left = 9
-          Top = 321
-          Width = 313
+          Top = 315
+          Width = 318
           Height = 113
           Anchors = [akLeft, akRight, akBottom]
           Caption = ' Where clause for [] '
           TabOrder = 1
           DesignSize = (
-            313
+            318
             113)
           object Memo_WhereClause: TMemo
             Left = 5
             Top = 15
-            Width = 302
+            Width = 307
             Height = 92
             Anchors = [akLeft, akTop, akRight, akBottom]
             TabOrder = 0
@@ -136,26 +137,25 @@ object Frm_ExportDataset: TFrm_ExportDataset
     object TabSheet_Fields: TTabSheet
       Caption = 'Fields'
       ImageIndex = 1
-      TabVisible = False
       DesignSize = (
-        626
-        445)
+        631
+        439)
       object GroupBox2: TGroupBox
         Left = 272
         Top = 8
-        Width = 346
-        Height = 425
+        Width = 351
+        Height = 419
         Anchors = [akLeft, akTop, akRight, akBottom]
         Caption = ' Fields '
         TabOrder = 0
         DesignSize = (
-          346
-          425)
+          351
+          419)
         object ListView_Fields: TListView
           Left = 15
           Top = 19
-          Width = 323
-          Height = 398
+          Width = 328
+          Height = 392
           Anchors = [akLeft, akTop, akRight, akBottom]
           Checkboxes = True
           Columns = <
@@ -175,18 +175,18 @@ object Frm_ExportDataset: TFrm_ExportDataset
         Left = 8
         Top = 8
         Width = 257
-        Height = 425
+        Height = 419
         Anchors = [akLeft, akTop, akBottom]
         Caption = ' Selected Tables '
         TabOrder = 1
         DesignSize = (
           257
-          425)
+          419)
         object ListBox_TablesFields: TListBox
           Left = 16
           Top = 24
           Width = 225
-          Height = 393
+          Height = 387
           Anchors = [akLeft, akTop, akBottom]
           ItemHeight = 13
           Sorted = True
@@ -237,8 +237,8 @@ object Frm_ExportDataset: TFrm_ExportDataset
     end
   end
   object brnBack: TButton
-    Left = 467
-    Top = 480
+    Left = 472
+    Top = 475
     Width = 75
     Height = 25
     Action = acBack
@@ -246,8 +246,8 @@ object Frm_ExportDataset: TFrm_ExportDataset
     TabOrder = 1
   end
   object btnNext: TButton
-    Left = 547
-    Top = 480
+    Left = 552
+    Top = 475
     Width = 75
     Height = 25
     Action = acNext
@@ -256,7 +256,7 @@ object Frm_ExportDataset: TFrm_ExportDataset
   end
   object btnCancel: TButton
     Left = 8
-    Top = 480
+    Top = 475
     Width = 75
     Height = 25
     Action = acCancel

@@ -2,13 +2,13 @@ unit TestInsertOperation;
 
 interface
 
-uses BaseTestCase, DatabaseConnection, DataSet, DataSetDecorator,
+uses TestCaseExtension,  DatabaseConnection, DataSet, DataSetDecorator,
   DataSetListBuilder, XmlClientDataSet, XmlDatasetReader, XmlValidator,
   DatabaseConfig, MockDatabaseConnection, DatabaseOperation, Windows,
   TestResources;
 
 type
-  TTestInsertOperation = class(TBaseTestCase)
+  TTestInsertOperation = class(TTestCaseExtension)
   private
   protected
 

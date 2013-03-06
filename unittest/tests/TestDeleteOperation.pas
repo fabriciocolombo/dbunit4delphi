@@ -2,10 +2,10 @@ unit TestDeleteOperation;
 
 interface
 
-uses BaseTestCase;
+uses TestCaseExtension;
 
 type
-  TTestDeleteOperation = class(TBaseTestCase)
+  TTestDeleteOperation = class(TTestCaseExtension)
   private
   protected
   public

@@ -2,18 +2,23 @@ unit uTableForExport;
 
 interface
 
+uses Classes;
+
 type
   TTableForExport = class
   private
     FTableName: String;
     FWhereClause: String;
+    FFields: TStringList;
   public
     property TableName: String read FTableName;
     property WhereClause: String read FWhereClause write FWhereClause;
+    property Fields: TStringList read FFields;
 
     function GetQuery: String;
 
     constructor Create(ATableName: String);
+    destructor Destroy; override;   
   end;
 
   
@@ -26,11 +31,22 @@ uses SysUtils;
 constructor TTableForExport.Create(ATableName: String);
 begin
   FTableName := ATableName;
+  FFields := TStringList.Create;
+end;
+
+destructor TTableForExport.Destroy;
+begin
+  FFields.Free;
+  inherited;
 end;
 
 function TTableForExport.GetQuery: String;
+var
+  vFields: String;
 begin
-  Result := Format('Select * from %s %s', [FTableName, FWhereClause]);
+  vFields := StringReplace(Trim(FFields.Text), sLineBreak, ',', [rfReplaceAll]);
+  
+  Result := Format('Select %s from %s %s', [vFields, FTableName, FWhereClause]);
 end;
 
 end.

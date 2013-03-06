@@ -1,5 +1,6 @@
 del /s /q bin\dunit.ini
-del /s /q bin\*.exe
+del /s /q bin\dbunit4delphitest.exe
+del /s /q bin\GenaratorDataset.exe
 del /s /q bin\*.txt
 del /s /q bin\*.dcp
 del /s /q bin\*.map

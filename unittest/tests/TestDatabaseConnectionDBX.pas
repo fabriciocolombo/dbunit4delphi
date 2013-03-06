@@ -2,12 +2,12 @@ unit TestDatabaseConnectionDBX;
 
 interface
 
-uses BaseTestCase, DatabaseConnection, DatabaseConnectionDBX, DatabaseConnectionFactory,
+uses TestCaseExtension,  DatabaseConnection, DatabaseConnectionDBX, DatabaseConnectionFactory,
      DatabaseConfig, DatabaseConfigDBX, DatabaseConnectionType, SqlExpr, Exceptions,
      Query, QueryDBX, StubDatabaseConfig, StubDatabaseConfigDBX, DB;
 
 type
-  TTestDatabaseConnectionDBX = class(TBaseTestCase)
+  TTestDatabaseConnectionDBX = class(TTestCaseExtension)
   private
   public
   published
@@ -53,7 +53,7 @@ begin
   vFields := vConn.getFields('DUAL');
   try
     CheckEquals(1, vFields.Count, 'FieldListMetadata size');
-    CheckEqualsAnsiString('Dummy', vFields.Fields[0].FieldName);
+    CheckEqualsText('Dummy', vFields.Fields[0].FieldName);
     CheckEquals(Ord(ftString), Ord(vFields.Fields[0].DataType));
     CheckEquals(1, vFields.Fields[0].Size);
   finally

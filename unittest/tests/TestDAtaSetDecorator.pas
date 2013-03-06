@@ -2,11 +2,11 @@ unit TestDataSetDecorator;
 
 interface
 
-uses BaseTestCase, DataSet, DataSetDecorator, DataSetIterator, DataSetListBuilder,
+uses TestCaseExtension,  DataSet, DataSetDecorator, DataSetIterator, DataSetListBuilder,
   XmlClientDataSet, XmlDatasetReader, Classes;
 
 type
-  TTestDataSetDecorator = class(TBaseTestCase)
+  TTestDataSetDecorator = class(TTestCaseExtension)
   private
   published
     procedure oneRow;

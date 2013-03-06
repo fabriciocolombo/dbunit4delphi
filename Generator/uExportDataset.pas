@@ -188,6 +188,8 @@ end;
 procedure TFrm_ExportDataset.GoToInitialState;
 begin
   ListBox_Tables.Items.Clear;
+  ListBox_TablesFields.Items.Clear;
+  ListView_Fields.Items.Clear;
 
   GroupBox_WhereClause.Caption := Format(sWhereClauseCaption, [EmptyStr]);
   Memo_WhereClause.Lines.Clear;
@@ -222,14 +224,22 @@ procedure TFrm_ExportDataset.ValidatePageFields;
 var
   i: Integer;
   vHasCheckedItem: Boolean;
+  vTableForExport: TTableForExport;
 begin
+  if ListView_Fields.Items.Count = 0 then
+    raise Exception.CreateFmt('No fields selected.', []);
+
+  vTableForExport := TTableForExport(ListBox_TablesFields.Items.Objects[ListBox_TablesFields.ItemIndex]);
+  vTableForExport.Fields.Clear;
+  
   vHasCheckedItem := False;
   for i := 0 to ListView_Fields.Items.Count-1 do
   begin
     if (ListView_Fields.Items[i].Checked) then
     begin
       vHasCheckedItem := True;
-      Break;
+
+      vTableForExport.Fields.Add(ListView_Fields.Items[i].Caption);
     end;
   end;
 
@@ -263,6 +273,7 @@ begin
       begin
         Caption := vFields.Fields[i].FieldName;
         SubItems.Add(FieldTypeNames[vFields.Fields[i].DataType]);
+        Checked := True;
       end;
     end;
   end;

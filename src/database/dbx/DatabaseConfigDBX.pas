@@ -2,7 +2,7 @@ unit DatabaseConfigDBX;
 
 interface
 
-uses DatabaseConfig, Classes;
+uses DatabaseConfig, Classes, IniFiles;
 
 type
   IDatabaseConfigDBX = interface(IDatabaseConfig)
@@ -49,14 +49,15 @@ type
     property VendorLib: String read GetVendorLib write SetVendorLib;
     property Params: TStrings read GetParams write SetParams;
 
+    constructor Create;override;
     destructor Destroy; override;
 
     function ConfigIsOk: Boolean; override;
     function ToString: String; override;
 
-    constructor Create;override;
-    
+    procedure LoadFromFile(const AFileName: String);override;
   end;
+
 
 implementation
 
@@ -108,6 +109,28 @@ end;
 function TDatabaseConfigDBX.GetVendorLib: String;
 begin
   Result := FVendorLib;
+end;
+
+procedure TDatabaseConfigDBX.LoadFromFile(const AFileName: String);
+var
+  vIniFile: TMemIniFile;
+begin
+  inherited;
+  vIniFile := TMemIniFile.Create(AFileName);
+  try
+    FDriverName := vIniFile.ReadString(DB_CONFIG, 'DriverName', EmptyStr);
+    FGetDriverFunc := vIniFile.ReadString(DB_CONFIG, 'GetDriverFunc', EmptyStr);
+    FLibraryName := vIniFile.ReadString(DB_CONFIG, 'LibraryName', EmptyStr);
+    FVendorLib := vIniFile.ReadString(DB_CONFIG, 'VendorLib', EmptyStr);
+    Database := vIniFile.ReadString(DB_CONFIG, 'Database', EmptyStr);
+    UserName := vIniFile.ReadString(DB_CONFIG, 'User_Name', EmptyStr);
+    Password := vIniFile.ReadString(DB_CONFIG, 'Password', EmptyStr);
+
+    FParams.Clear;
+    vIniFile.ReadSectionValues(DB_CONFIG, FParams);
+  finally
+    vIniFile.Free;
+  end;
 end;
 
 procedure TDatabaseConfigDBX.SetDriverName(const Value: String);

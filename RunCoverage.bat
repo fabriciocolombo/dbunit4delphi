@@ -1,6 +1,11 @@
 @echo off
-d:
-cd D:\Desenvolvimento\OpenSource\dbunit4delphi\unittest
-rmdir reports\coverage /S /Q
-mkdir reports\coverage
-CodeCoverage.exe -e ..\bin\dbunit4delphitest.exe -m ..\bin\dbunit4delphitest.map -od reports\coverage -uf dbunit4delphitest.dpr
+
+cd unittest
+rmdir ..\target\coverage /S /Q
+mkdir ..\target\coverage
+
+..\bin\CodeCoverage.exe -e ..\bin\dbunit4delphitest.exe -m ..\bin\dbunit4delphitest.map -od ..\target\coverage -uf dbunit4delphitest.dpr -a /text
+
+cd ..
+
+call target\coverage\CodeCoverage_summary.html

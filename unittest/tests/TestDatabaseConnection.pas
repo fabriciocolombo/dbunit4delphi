@@ -2,11 +2,11 @@ unit TestDatabaseConnection;
 
 interface
 
-uses BaseTestCase, DatabaseConnection, Exceptions, DatabaseConnectionFactory,
+uses TestCaseExtension,  DatabaseConnection, Exceptions, DatabaseConnectionFactory,
      DatabaseConfig, DatabaseConnectionType, StubDatabaseConfig;
 
 type
-  TTestDatabaseConnection = class(TBaseTestCase)
+  TTestDatabaseConnection = class(TTestCaseExtension)
   private
   public
   published

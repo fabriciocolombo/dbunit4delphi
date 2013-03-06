@@ -2,10 +2,10 @@ unit TestMockObjects;
 
 interface
 
-uses BaseTestCase;
+uses TestCaseExtension;
 
 type
-  TTestMockObjects = class(TBaseTestCase)
+  TTestMockObjects = class(TTestCaseExtension)
   private
   public
   published

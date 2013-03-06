@@ -142,7 +142,7 @@ begin
   try
     Rewrite(vFile);
 
-    Write(vFile, ExportAsXmlText);
+    Write(vFile, UTF8Encode(ExportAsXmlText));
   finally
     CloseFile(vFile);
   end;

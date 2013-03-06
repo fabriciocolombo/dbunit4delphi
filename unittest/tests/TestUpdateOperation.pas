@@ -2,10 +2,10 @@ unit TestUpdateOperation;
 
 interface
 
-uses BaseTestCase;
+uses TestCaseExtension;
 
 type
-  TTestUpdateOperation = class(TBaseTestCase)
+  TTestUpdateOperation = class(TTestCaseExtension)
   published
     procedure UpdatePerson;
   end;

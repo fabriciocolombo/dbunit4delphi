@@ -2,10 +2,10 @@ unit TestExportDataSet;
 
 interface
 
-uses BaseTestCase, Classes;
+uses TestCaseExtension,  Classes;
 
 type
-  TTestExportDataSet = class(TBaseTestCase)
+  TTestExportDataSet = class(TTestCaseExtension)
   private
   public
   published
@@ -130,4 +130,3 @@ initialization
   TTestExportDataSet.RegisterTest('ExportDataSet');
 
 end.
-
