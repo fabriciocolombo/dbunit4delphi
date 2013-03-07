@@ -1,0 +1,3 @@
+[submodule "lib/dunit-extension"]
+	path = lib/dunit-extension
+	url = https://github.com/fabriciocolombo/dunit-extension.git
