@@ -2,3 +2,6 @@ target
 unittest
 bin/dbunit4delphiR7.dcp
 bin/dbunit4delphitest.map
+bin/dbunit4delphitest.exe
+bin/GenaratorDataset.exe
+git-remove-history.sh

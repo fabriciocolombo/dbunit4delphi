@@ -77,8 +77,6 @@ contains
   DBTestCase in '..\src\testcase\DBTestCase.pas',
   XmlDatasetReader in '..\src\xml\XmlDatasetReader.pas',
   XMLDomParseError in '..\src\xml\XMLDomParseError.pas',
-  XmlValidator in '..\src\xml\XmlValidator.pas',
-  BaseTestCase in '..\src\testcase\BaseTestCase.pas',
-  AppUtils in '..\src\util\AppUtils.pas';
+  XmlValidator in '..\src\xml\XmlValidator.pas';
 
 end.
