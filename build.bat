@@ -18,13 +18,13 @@ goto :end
 
 :compile
 cd src
-%DELPHI_HOME%\bin\dcc32.exe -B ..\packages\dbunit4delphiR7.dpk -Q -W%WARNING_MESSAGES% -D%CONDITIONAL_DEFINES% -U%SEARCH_PATH% -LE%DELPHI_HOME%\Projects\Bpl
+"%DELPHI_HOME%\bin\dcc32.exe" -B ..\packages\dbunit4delphiR7.dpk -Q -W%WARNING_MESSAGES% -D%CONDITIONAL_DEFINES% -U%SEARCH_PATH% -LE"%DELPHI_HOME%\Projects\Bpl"
 
 cd ..\Generator
-%DELPHI_HOME%\bin\dcc32.exe -B GenaratorDataset.dpr -Q -W%WARNING_MESSAGES% -D%CONDITIONAL_DEFINES% -U%SEARCH_PATH%
+"%DELPHI_HOME%\bin\dcc32.exe" -B GenaratorDataset.dpr -Q -W%WARNING_MESSAGES% -D%CONDITIONAL_DEFINES% -U%SEARCH_PATH%
 
 cd ..\unittest
-%DELPHI_HOME%\bin\dcc32.exe -B dbunit4delphitest.dpr -Q -W%WARNING_MESSAGES% -D%CONDITIONAL_DEFINES% -U%SEARCH_PATH%
+"%DELPHI_HOME%\bin\dcc32.exe" -B dbunit4delphitest.dpr -Q -W%WARNING_MESSAGES% -D%CONDITIONAL_DEFINES% -U%SEARCH_PATH%
 
 cd ..
 

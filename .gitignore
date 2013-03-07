@@ -5,3 +5,4 @@ bin/dbunit4delphitest.map
 bin/dbunit4delphitest.exe
 bin/GenaratorDataset.exe
 git-remove-history.sh
+CodeCoverage.exe

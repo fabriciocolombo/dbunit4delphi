@@ -1,1 +1,1 @@
-curl -L https://sites.google.com/site/fabriciodev/dependency/CodeCoverage._xe -o bin/CodeCoverage.exe
+curl -L https://sites.google.com/site/fabriciodev/dependency/CodeCoverage._xe -o CodeCoverage.exe
