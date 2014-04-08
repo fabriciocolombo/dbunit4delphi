@@ -77,7 +77,7 @@ procedure TTestDatabaseConnectionDBX.newConnection;
 var
   vConn: IDatabaseConnection;
 begin
-  vConn := ConnectionFactory.newConnection(TStubDatabaseConfigDBX.newConfig(dctDBX));
+  vConn := ConnectionFactory.newConnection(TStubDatabaseConfigDBX.newConfig(dctDBX), False);
 
   CheckNotNull(vConn);
   CheckTrue(vConn.realConnection is TSQLConnection);
@@ -88,7 +88,7 @@ var
   vConn: IDatabaseConnection;
   vQuery: IQuery; 
 begin
-  vConn := ConnectionFactory.newConnection(TStubDatabaseConfigDBX.newConfig(dctDBX));
+  vConn := ConnectionFactory.newConnection(TStubDatabaseConfigDBX.newConfig(dctDBX), False);
 
   CheckTrue(vConn.realConnection is TSQLConnection);
 
@@ -102,7 +102,7 @@ procedure TTestDatabaseConnectionDBX.OpenAndClose;
 var
   vConn: IDatabaseConnection;
 begin
-  vConn := ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX);
+  vConn := ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX, False);
   CheckFalse(vConn.connected);
   vConn.open;
   CheckTrue(vConn.connected);

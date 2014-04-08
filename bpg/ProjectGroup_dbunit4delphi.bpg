@@ -1,26 +1,48 @@
-#------------------------------------------------------------------------------
-VERSION = BWS.01
-#------------------------------------------------------------------------------
-!ifndef ROOT
-ROOT = $(MAKEDIR)\..
-!endif
-#------------------------------------------------------------------------------
-MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
-DCC = $(ROOT)\bin\dcc32.exe $**
-BRCC = $(ROOT)\bin\brcc32.exe $**
-#------------------------------------------------------------------------------
-PROJECTS = dbunit4delphiR7.bpl dbunit4delphitest.exe GenaratorDataset.exe
-#------------------------------------------------------------------------------
-default: $(PROJECTS)
-#------------------------------------------------------------------------------
-
-dbunit4delphitest.exe: ..\unittest\dbunit4delphitest.dpr
-  $(DCC)
-
-dbunit4delphiR7.bpl: ..\packages\dbunit4delphiR7.dpk
-  $(DCC)
-
-GenaratorDataset.exe: ..\Generator\GenaratorDataset.dpr
-  $(DCC)
-
-
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{4763E3C2-8916-4A86-8918-86F2AB1C6F4E}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="..\unittest\dbunit4delphitest.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="..\Generator\GenaratorDataset.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="dbunit4delphitest">
+			<MSBuild Projects="..\unittest\dbunit4delphitest.dproj"/>
+		</Target>
+		<Target Name="dbunit4delphitest:Clean">
+			<MSBuild Targets="Clean" Projects="..\unittest\dbunit4delphitest.dproj"/>
+		</Target>
+		<Target Name="dbunit4delphitest:Make">
+			<MSBuild Targets="Make" Projects="..\unittest\dbunit4delphitest.dproj"/>
+		</Target>
+		<Target Name="GenaratorDataset">
+			<MSBuild Projects="..\Generator\GenaratorDataset.dproj"/>
+		</Target>
+		<Target Name="GenaratorDataset:Clean">
+			<MSBuild Targets="Clean" Projects="..\Generator\GenaratorDataset.dproj"/>
+		</Target>
+		<Target Name="GenaratorDataset:Make">
+			<MSBuild Targets="Make" Projects="..\Generator\GenaratorDataset.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="dbunit4delphitest;GenaratorDataset"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="dbunit4delphitest:Clean;GenaratorDataset:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="dbunit4delphitest:Make;GenaratorDataset:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

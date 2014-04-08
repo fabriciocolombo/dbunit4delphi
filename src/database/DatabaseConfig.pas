@@ -2,10 +2,8 @@ unit DatabaseConfig;
 
 interface
 
-{$I ..\dbunit4delphi.inc}
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs,
-  DatabaseConnectionType;
+  SysUtils, DatabaseConnectionType;
 
 const
   DB_CONFIG = 'DBCONFIG';
@@ -58,7 +56,7 @@ type
     property DatabaseConnectionType: TDatabaseConnectionType read GetDatabaseConnectionType write SetDatabaseConnectionType;
 
     function ConfigIsOk: Boolean;virtual;
-    function ToString: String;{$IFDEF D2009UP}override;{$ELSE}virtual;{$ENDIF}
+    function ToString: String;override;
     
     function getName: String;
 

@@ -68,7 +68,7 @@ type
 
   EMockException = class(EBaseException);
 
-  EExpectationNotSatisfacted = class(EMockException)
+  EExpectationNotSatisfied = class(EMockException)
   public
     constructor Create(AExpectedCalls, ARealCalls: Integer; AMethod: String);
   end;
@@ -161,9 +161,9 @@ begin
   inherited Create('XML is empty');
 end;
 
-{ EExpectationNotSatisfacted }
+{ EExpectationNotSatisfied }
 
-constructor EExpectationNotSatisfacted.Create(AExpectedCalls, ARealCalls: Integer; AMethod: String);
+constructor EExpectationNotSatisfied.Create(AExpectedCalls, ARealCalls: Integer; AMethod: String);
 begin
   inherited CreateFmt('Expecting %d calls to méthod "%s" but was %d.',[AExpectedCalls, AMethod,ARealCalls]);
 end;

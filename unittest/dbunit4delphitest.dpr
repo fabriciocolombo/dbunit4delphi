@@ -1,5 +1,9 @@
 program dbunit4delphitest;
 
+{$IFDEF AsConsole}
+  {$AppType Console}
+{$ENDIF}
+
 uses
   FastMM4,
   TestRunnerUtils,
@@ -16,7 +20,7 @@ uses
   TestXmlDataSet in 'tests\TestXmlDataSet.pas',
   TestDataSetListBuilder in 'tests\TestDataSetListBuilder.pas',
   MockDataSet in 'mocks\MockDataSet.pas',
-  TestDataSetDecorator in 'tests\TestDAtaSetDecorator.pas',
+  TestDAtaSetDecorator in 'tests\TestDAtaSetDecorator.pas',
   MockDatabaseConnection in 'mocks\MockDatabaseConnection.pas',
   StubDataset in 'stubs\StubDataset.pas',
   TestInsertOperation in 'tests\TestInsertOperation.pas',
@@ -32,7 +36,6 @@ uses
   TestExportDataSet in 'tests\TestExportDataSet.pas',
   TesteMetadata in 'tests\TesteMetadata.pas',
   DBTestCase in '..\src\testcase\DBTestCase.pas',
-  CompatibilityClasses in '..\src\CompatibilityClasses.pas',
   Exceptions in '..\src\Exceptions.pas',
   Formatter in '..\src\Formatter.pas',
   DatabaseConfig in '..\src\database\DatabaseConfig.pas',
@@ -60,8 +63,6 @@ uses
   NoneOperation in '..\src\database\operation\NoneOperation.pas',
   RefreshOperation in '..\src\database\operation\RefreshOperation.pas',
   UpdateOperation in '..\src\database\operation\UpdateOperation.pas',
-  Logger in '..\src\logger\Logger.pas',
-  LoggerFactory in '..\src\logger\LoggerFactory.pas',
   CustomStatementBuilder in '..\src\statement\CustomStatementBuilder.pas',
   Statement in '..\src\statement\Statement.pas',
   StatementBuilder in '..\src\statement\StatementBuilder.pas',
@@ -75,10 +76,6 @@ uses
   XmlValidator in '..\src\xml\XmlValidator.pas';
 
 {$R *.res}
-
-{$IFDEF AsConsole}
-  {$AppType Console}
-{$ENDIF}
 
 begin
   Application.Initialize;

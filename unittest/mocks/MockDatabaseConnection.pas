@@ -127,7 +127,7 @@ end;
 procedure TMockDatabaseConnection.checkCalls;
 begin
   if (FExpectedStatements.Count <> FStatements.Count) then
-    raise EExpectationNotSatisfacted.Create(FExpectedStatements.Count, FStatements.Count, 'Execute');
+    raise EExpectationNotSatisfied.Create(FExpectedStatements.Count, FStatements.Count, 'Execute');
 
   if AnsiCompareText(FExpectedStatements.Text, FStatements.Text) <> 0 then
     raise EMockException.CreateFmt('Expected Statements "%s" but was "%s"',[FExpectedStatements.Text, FStatements.Text]);

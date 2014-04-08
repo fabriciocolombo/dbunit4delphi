@@ -14,7 +14,7 @@ type
     FSetUpOperation: Boolean;
     FTearDownOperation: Boolean;
   protected
-    function getDataSet: IDataSet;override;
+    function getDataSet: IDataSetReadOnly;override;
 
     function getConnection: IDatabaseConnection; override;
 
@@ -32,7 +32,7 @@ type
 implementation
 
 uses DatabaseConfigDBX, StubDatabaseConfig,
-  StubDatabaseConfigDBX, DatabaseConnectionType, SysUtils, StdConvs;
+  StubDatabaseConfigDBX, DatabaseConnectionType, SysUtils, StdConvs, TestUtils;
 
 { TSampleDBTestCase }
 
@@ -61,10 +61,10 @@ end;
 
 function TSampleDBTestCase.getDatabaseConfig: IDatabaseConfig;
 begin
-  Result := TStubDatabaseConfigDBX.Create;
+  Result := TTestUtils.DATABASECONFIGDBX;
 end;
 
-function TSampleDBTestCase.getDataSet: IDataSet;
+function TSampleDBTestCase.getDataSet: IDataSetReadOnly;
 begin
   Result := nil;
   FDataSet := True;

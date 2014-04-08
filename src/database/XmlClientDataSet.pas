@@ -4,6 +4,9 @@ interface
 
 uses DataSet, SysUtils, DB, DBClient, Classes, Exceptions;
 
+const
+  NULL_VALUE = 'null';
+
 type
 
 (*
@@ -92,7 +95,14 @@ function TXmlClientDataSet.AddRow(AField, AValue: String): IDataSet;
 begin
   CheckBrowseMode;
 
-  FDataSet.FieldByName(AField).AsString := AValue;
+  if SameText(AValue, NULL_VALUE) then
+  begin
+    FDataSet.FieldByName(AField).Clear;
+  end
+  else
+  begin
+    FDataSet.FieldByName(AField).AsString := AValue;
+  end;
 
   Result := Self;
 end;

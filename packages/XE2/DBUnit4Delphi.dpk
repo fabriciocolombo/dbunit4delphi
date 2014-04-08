@@ -1,0 +1,78 @@
+package DBUnit4Delphi;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  xmlrtl,
+  dsnap,
+  dbrtl,
+  DbxCommonDriver,
+  dbexpress;
+
+contains
+  Exceptions in '..\..\src\Exceptions.pas',
+  Formatter in '..\..\src\Formatter.pas',
+  DatabaseConfig in '..\..\src\database\DatabaseConfig.pas',
+  DatabaseConnection in '..\..\src\database\DatabaseConnection.pas',
+  DatabaseConnectionType in '..\..\src\database\DatabaseConnectionType.pas',
+  DataSet in '..\..\src\database\DataSet.pas',
+  DataSetDecorator in '..\..\src\database\DataSetDecorator.pas',
+  DataSetIterator in '..\..\src\database\DataSetIterator.pas',
+  DataSetListBuilder in '..\..\src\database\DataSetListBuilder.pas',
+  ExportDataSet in '..\..\src\database\ExportDataSet.pas',
+  Field in '..\..\src\database\Field.pas',
+  FlatXmlDataSet in '..\..\src\database\FlatXmlDataSet.pas',
+  Query in '..\..\src\database\Query.pas',
+  Table in '..\..\src\database\Table.pas',
+  XmlClientDataSet in '..\..\src\database\XmlClientDataSet.pas',
+  CustomStatementBuilder in '..\..\src\statement\CustomStatementBuilder.pas',
+  Statement in '..\..\src\statement\Statement.pas',
+  StatementBuilder in '..\..\src\statement\StatementBuilder.pas',
+  StatementBuilderIntf in '..\..\src\statement\StatementBuilderIntf.pas',
+  StatementDeleteBuilder in '..\..\src\statement\StatementDeleteBuilder.pas',
+  StatementInsertBuilder in '..\..\src\statement\StatementInsertBuilder.pas',
+  StatementSelectBuilder in '..\..\src\statement\StatementSelectBuilder.pas',
+  StatementUpdateBuilder in '..\..\src\statement\StatementUpdateBuilder.pas',
+  XmlDatasetReader in '..\..\src\xml\XmlDatasetReader.pas',
+  XMLDomParseError in '..\..\src\xml\XMLDomParseError.pas',
+  XmlValidator in '..\..\src\xml\XmlValidator.pas',
+  DatabaseConnectionFactory in '..\..\src\database\DatabaseConnectionFactory.pas',
+  DatabaseConfigDBX in '..\..\src\database\dbx\DatabaseConfigDBX.pas',
+  DatabaseConnectionDBX in '..\..\src\database\dbx\DatabaseConnectionDBX.pas',
+  QueryDBX in '..\..\src\database\dbx\QueryDBX.pas',
+  CompositeOperation in '..\..\src\database\operation\CompositeOperation.pas',
+  DatabaseOperation in '..\..\src\database\operation\DatabaseOperation.pas',
+  DeleteAllOperation in '..\..\src\database\operation\DeleteAllOperation.pas',
+  DeleteOperation in '..\..\src\database\operation\DeleteOperation.pas',
+  InsertOperation in '..\..\src\database\operation\InsertOperation.pas',
+  NoneOperation in '..\..\src\database\operation\NoneOperation.pas',
+  RefreshOperation in '..\..\src\database\operation\RefreshOperation.pas',
+  UpdateOperation in '..\..\src\database\operation\UpdateOperation.pas';
+
+end.

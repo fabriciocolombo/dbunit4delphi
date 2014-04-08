@@ -18,7 +18,7 @@ type
     function setUpOperation: IDatabaseOperation;virtual;
     function tearDownOperation: IDatabaseOperation;virtual;
 
-    function getDataSet: IDataSet;virtual;abstract;
+    function getDataSet: IDataSetReadOnly;virtual;abstract;
     function getDatabaseConfig: IDatabaseConfig;virtual;abstract;
   public
   end;
@@ -34,7 +34,9 @@ uses NoneOperation;
 function TDBTestCase.getConnection: IDatabaseConnection;
 begin
   if not Assigned(FConnection) then
+  begin
     FConnection := ConnectionFactory.newConnection(getDatabaseConfig);
+  end;
 
   Result := FConnection;
 end;
@@ -58,17 +60,20 @@ end;
 
 procedure TDBTestCase.TearDown;
 begin
-  tearDownOperation.execute(FConnection, getDataSet);
-  if Assigned(FConnection) then
-  begin
-    FConnection.RollbackTransaction;
+  try
+    tearDownOperation.execute(FConnection, getDataSet);
+  finally
+    if Assigned(FConnection) then
+    begin
+      FConnection.RollbackTransaction;
+    end;
   end;
   inherited;
 end;
 
 function TDBTestCase.tearDownOperation: IDatabaseOperation;
 begin
-  Result := TDatabaseOperation.DELETE;
+  Result := TDatabaseOperation.NONE;
 end;
 
 end.

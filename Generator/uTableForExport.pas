@@ -44,7 +44,14 @@ function TTableForExport.GetQuery: String;
 var
   vFields: String;
 begin
-  vFields := StringReplace(Trim(FFields.Text), sLineBreak, ',', [rfReplaceAll]);
+  if FFields.Count = 0 then
+  begin
+    vFields := '*'
+  end
+  else
+  begin
+    vFields := StringReplace(Trim(FFields.Text), sLineBreak, ',', [rfReplaceAll]);
+  end;
   
   Result := Format('Select %s from %s %s', [vFields, FTableName, FWhereClause]);
 end;

@@ -3,7 +3,7 @@ unit Statement;
 interface
 
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs, DB;
+  SysUtils, DB;
 
 type
   IStatement = interface

@@ -4,7 +4,8 @@ interface
 
 uses
   SysUtils, Classes, Forms,
-  DatabaseConnection, DatabaseConnectionFactory, DatabaseConfig, DatabaseConfigDBX;
+  DatabaseConnection, DatabaseConnectionFactory, DatabaseConfig, DatabaseConfigDBX, Data.DBXFirebird, Data.DB,
+  Data.SqlExpr, Data.DBXDb2, Data.DBXInterBase, Data.DBXMsSQL, Data.DBXMySQL, Data.DBXOdbc, Data.DBXOracle;
 
 type
   TDMGenerator = class(TDataModule)

@@ -3,7 +3,6 @@ unit StatementBuilder;
 interface
 
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs,
   StatementDeleteBuilder, StatementSelectBuilder, StatementUpdateBuilder,
   StatementInsertBuilder;
 

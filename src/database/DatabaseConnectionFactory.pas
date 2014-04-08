@@ -7,7 +7,7 @@ uses DatabaseConnection, DatabaseConfig, DatabaseConnectionType, Exceptions;
 type
   IDatabaseConnectionFactory = interface
   ['{844D387C-FE80-41A0-85FA-477C189D69A2}']
-    function newConnection(const Config: IDatabaseConfig): IDatabaseConnection;
+    function newConnection(const Config: IDatabaseConfig; AOpened: Boolean = True): IDatabaseConnection;
   end;
 
   function ConnectionFactory: IDatabaseConnectionFactory;
@@ -28,12 +28,12 @@ type
   TDatabaseConnectionFactory = class(TInterfacedObject, IDatabaseConnectionFactory)
   private
   public
-    function newConnection(const Config: IDatabaseConfig): IDatabaseConnection;
+    function newConnection(const Config: IDatabaseConfig; AOpened: Boolean = True): IDatabaseConnection;
   end;
 
 { TDatabaseConnectionFactory }
 
-function TDatabaseConnectionFactory.newConnection(const Config: IDatabaseConfig): IDatabaseConnection;
+function TDatabaseConnectionFactory.newConnection(const Config: IDatabaseConfig; AOpened: Boolean): IDatabaseConnection;
 begin
   case Config.DatabaseConnectionType of
     dctDBX: Result := TDatabaseConnectionDBX.Create;
@@ -48,6 +48,11 @@ begin
   end;
 
   Result.configure(Config);
+
+  if AOpened then
+  begin
+    Result.open;
+  end;
 end;
 
 initialization

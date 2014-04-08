@@ -3,8 +3,7 @@ unit StatementDeleteBuilder;
 interface
 
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs,
-  CustomStatementBuilder, StatementBuilderIntf;
+  SysUtils, CustomStatementBuilder, StatementBuilderIntf;
 
 type
   IStatementDeleteBuilder = interface(IStatementBuilder)

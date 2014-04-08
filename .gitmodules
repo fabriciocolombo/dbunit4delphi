@@ -1,3 +1,6 @@
 [submodule "lib/dunit-extension"]
 	path = lib/dunit-extension
 	url = https://github.com/fabriciocolombo/dunit-extension.git
+[submodule "lib/DelphiLogger"]
+	path = lib/DelphiLogger
+	url = https://github.com/fabriciocolombo/DelphiLogger.git

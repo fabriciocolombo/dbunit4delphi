@@ -2,11 +2,15 @@ unit TestExportDataSet;
 
 interface
 
-uses TestCaseExtension,  Classes;
+uses TestCaseExtension,  Classes, DatabaseConnection;
 
 type
   TTestExportDataSet = class(TTestCaseExtension)
   private
+    FConnection : IDatabaseConnection;
+  protected
+    procedure SetUp; override;
+    procedure TearDown; override;
   public
   published
     procedure ExportDualTable;
@@ -18,7 +22,7 @@ type
 
 implementation
 
-uses TestUtils, DatabaseConnection, DatabaseConnectionFactory,
+uses TestUtils, DatabaseConnectionFactory,
   ExportDataSet, TestFramework, SysUtils;
 
 const
@@ -40,7 +44,7 @@ var
   vXmlDataSet: String;
 begin
   vXmlDataSet := TDataExporter
-                  .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))
+                  .CreateWithConnection(FConnection)
                   .WithMultipleTables(['Dual', 'Person']).ExportAsXmlText;
 
   vExpectedXml := Format(DataSetXml, [DualXML + sLineBreak + PersonXml]);
@@ -60,7 +64,7 @@ begin
     vList.Add('Person');
 
     vXmlDataSet := TDataExporter
-                    .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))
+                    .CreateWithConnection(FConnection)
                     .WithMultipleTables(vList).ExportAsXmlText;
 
     vExpectedXml := Format(DataSetXml, [DualXML + sLineBreak + PersonXml]);
@@ -77,7 +81,7 @@ var
   vXmlDataSet: String;
 begin
   vXmlDataSet := TDataExporter
-                  .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))
+                  .CreateWithConnection(FConnection)
                   .WithTableName('Dual').ExportAsXmlText;
 
   vExpectedXml := Format(DataSetXml, [DualXML]);
@@ -101,7 +105,7 @@ begin
   vExpectedXml := Format(DataSetXml, [DualXML]);
 
   TDataExporter
-    .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))
+    .CreateWithConnection(FConnection)
     .WithTableName('Dual')
       .ExportToXmlFile(vFileName);
 
@@ -118,12 +122,26 @@ var
   vXmlDataSet: String;
 begin
   vXmlDataSet := TDataExporter
-                  .CreateWithConnection(ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX))
+                  .CreateWithConnection(FConnection)
                   .WithQueryText('Dual', 'SELECT * From Dual').ExportAsXmlText;
 
   vExpectedXml := Format(DataSetXml, [DualXML]);
 
   CheckEqualsString(vExpectedXml, vXmlDataSet);
+end;
+
+procedure TTestExportDataSet.SetUp;
+begin
+  inherited;
+  FConnection := ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX);
+  FConnection.StartTransaction;
+end;
+
+procedure TTestExportDataSet.TearDown;
+begin
+  inherited;
+  FConnection.RollbackTransaction;
+  FConnection := nil;
 end;
 
 initialization

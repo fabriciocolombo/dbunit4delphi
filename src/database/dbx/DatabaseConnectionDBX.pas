@@ -2,14 +2,14 @@ unit DatabaseConnectionDBX;
 
 interface
 
-uses DatabaseConnection, SqlExpr, CompatibilityClasses, DatabaseConfig, Query, DatabaseConfigDBX,
-     QueryDBX, Exceptions, Statement, DB, DataSet, Classes;
+uses DatabaseConnection, SqlExpr, DatabaseConfig, Query, DatabaseConfigDBX,
+     QueryDBX, Exceptions, Statement, DB, DataSet, Classes, DBXCommon;
 
 type
   TDatabaseConnectionDBX = class(TInterfacedObject, IDatabaseConnection)
   private
     FSqlConnection: TSQLConnection;
-    FTD: TTransaction;
+    FTD: TDBXTransaction;
 
     function TableExists(ATableName: String): Boolean;
   public
@@ -52,8 +52,6 @@ begin
   inherited;
   FSqlConnection := TSQLConnection.Create(nil);
   FSqlConnection.LoginPrompt := False;
-
-  FTD := TDBXConnectionCompatibility.UniqueTransaction;
 end;
 
 procedure TDatabaseConnectionDBX.close;
@@ -63,7 +61,7 @@ end;
 
 procedure TDatabaseConnectionDBX.CommitTransaction;
 begin
-  TDBXConnectionCompatibility.Commit(FSqlConnection, FTD);
+  FSqlConnection.CommitFreeAndNil(FTD);
 end;
 
 procedure TDatabaseConnectionDBX.configure(const config: IDatabaseConfig);
@@ -164,12 +162,12 @@ end;
 
 procedure TDatabaseConnectionDBX.RollbackTransaction;
 begin
-  TDBXConnectionCompatibility.Rollback(FSqlConnection, FTD);
+  FSqlConnection.RollbackFreeAndNil(FTD);
 end;
 
 procedure TDatabaseConnectionDBX.StartTransaction;
 begin
-  FTD := TDBXConnectionCompatibility.StartTransaction(FSqlConnection, FTD);
+  FTD := FSqlConnection.BeginTransaction;
 end;
 
 function TDatabaseConnectionDBX.TableExists(ATableName: String): Boolean;

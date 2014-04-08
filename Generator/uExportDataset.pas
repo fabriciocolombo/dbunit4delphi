@@ -4,9 +4,8 @@ interface
 
 uses
   DatabaseConnection, DatabaseConnectionFactory, DataSet,
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Windows, Messages, FileCtrl, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Grids, DBGrids, DB, DBClient, CheckLst, ComCtrls, ActnList,
-  FileCtrl,
   Buttons, ExtCtrls;
 
 const
@@ -226,25 +225,25 @@ var
   vHasCheckedItem: Boolean;
   vTableForExport: TTableForExport;
 begin
-  if ListView_Fields.Items.Count = 0 then
-    raise Exception.CreateFmt('No fields selected.', []);
-
-  vTableForExport := TTableForExport(ListBox_TablesFields.Items.Objects[ListBox_TablesFields.ItemIndex]);
-  vTableForExport.Fields.Clear;
-  
-  vHasCheckedItem := False;
-  for i := 0 to ListView_Fields.Items.Count-1 do
+  if ListView_Fields.Items.Count > 0 then
   begin
-    if (ListView_Fields.Items[i].Checked) then
+    vTableForExport := TTableForExport(ListBox_TablesFields.Items.Objects[ListBox_TablesFields.ItemIndex]);
+    vTableForExport.Fields.Clear;
+  
+    vHasCheckedItem := False;
+    for i := 0 to ListView_Fields.Items.Count-1 do
     begin
-      vHasCheckedItem := True;
+      if (ListView_Fields.Items[i].Checked) then
+      begin
+        vHasCheckedItem := True;
 
-      vTableForExport.Fields.Add(ListView_Fields.Items[i].Caption);
+        vTableForExport.Fields.Add(ListView_Fields.Items[i].Caption);
+      end;
     end;
-  end;
 
-  if not vHasCheckedItem then
-    raise Exception.CreateFmt('No fields selected.', []);
+    if not vHasCheckedItem then
+      raise Exception.CreateFmt('No fields selected.', []);
+  end;
 end;
 
 procedure TFrm_ExportDataset.DBGrid_TablesKeyDown(Sender: TObject;var Key: Word; Shift: TShiftState);

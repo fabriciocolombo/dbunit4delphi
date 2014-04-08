@@ -54,19 +54,19 @@ var
 begin
   inherited;
 
-  vMetadata := AConnection.getFields(ADataSet.getTableName);
-  try
-    ADataSet.First;
-    while not ADataSet.Eof do
-    begin
+  ADataSet.First;
+  while not ADataSet.Eof do
+  begin
+    vMetadata := AConnection.getFields(ADataSet.getTableName);
+    try
       vStatement := BuildInsertStatement(ADataSet, vMetadata);
 
       AConnection.Execute(vStatement);
-
-      ADataSet.Next;
+    finally
+      vMetadata.Free;
     end;
-  finally
-    vMetadata.Free;
+
+    ADataSet.Next;
   end;
 end;
 

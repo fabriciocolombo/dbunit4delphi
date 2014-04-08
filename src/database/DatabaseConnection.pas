@@ -3,8 +3,7 @@ unit DatabaseConnection;
 interface
 
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs,
-  DatabaseConfig, DataSet, Query, Statement, DB;
+  SysUtils, Classes, DatabaseConfig, DataSet, Query, Statement, DB;
 
 type
   IDatabaseConnection = interface

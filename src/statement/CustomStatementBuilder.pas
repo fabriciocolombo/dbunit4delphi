@@ -3,8 +3,7 @@ unit CustomStatementBuilder;
 interface
 
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs, DB,
-  Statement, StatementBuilderIntf;
+  Classes, DB, SysUtils, Statement, StatementBuilderIntf;
 
 type
   TCustomStatementBuilder = class(TInterfacedObject, IStatementBuilder)

@@ -5,8 +5,6 @@ interface
 uses xmldom, XMLIntf, msxmldom, XMLDoc, SysUtils, DataSet, Exceptions, XmlValidator,
      Classes;
 
-{$I ..\dbunit4delphi.inc}
-
 type
   TXmlReadingMode = (xmlFile, xmlText, xmlStream);
 
@@ -308,8 +306,6 @@ begin
 end;
 
 initialization
-  {$IFDEF D2010UP}
-    MSXML6_ProhibitDTD := False;
-  {$ENDIF}
+  MSXML6_ProhibitDTD := False;
 
 end.

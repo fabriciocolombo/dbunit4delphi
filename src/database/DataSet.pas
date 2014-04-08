@@ -3,7 +3,7 @@ unit DataSet;
 interface
 
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs, DB, DBClient;
+  Classes, DB, DBClient;
 
 type
   IField = interface

@@ -31,7 +31,7 @@ uses Exceptions;
 procedure TMockXmlValidator.checkCalls;
 begin
   if (FCalls <> FExpectedCalls) then
-    raise EExpectationNotSatisfacted.Create(FExpectedCalls, FCalls, 'Validate');
+    raise EExpectationNotSatisfied.Create(FExpectedCalls, FCalls, 'Validate');
 end;
 
 procedure TMockXmlValidator.setExpectationCalls(AQuantity: Integer);

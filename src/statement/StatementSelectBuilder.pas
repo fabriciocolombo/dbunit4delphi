@@ -3,8 +3,7 @@ unit StatementSelectBuilder;
 interface
 
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs,
-  Statement, CustomStatementBuilder, StatementBuilderIntf;
+  SysUtils, Statement, CustomStatementBuilder, StatementBuilderIntf;
 
 type
   IStatementSelectBuilder = interface(IStatementBuilder)

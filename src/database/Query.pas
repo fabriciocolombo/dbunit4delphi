@@ -3,8 +3,7 @@ unit Query;
 interface
 
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs,
-  DataSet, DB;
+  Classes, DataSet, DB;
 
 type
   IQuery = interface

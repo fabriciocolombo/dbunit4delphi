@@ -32,7 +32,7 @@ uses Exceptions;
 procedure TMockDatabaseOperation.checkCalls;
 begin
   if (FExpectedCalls <> FCalls) then
-    raise EExpectationNotSatisfacted.Create(FExpectedCalls, FCalls, 'execute');
+    raise EExpectationNotSatisfied.Create(FExpectedCalls, FCalls, 'execute');
 end;
 
 procedure TMockDatabaseOperation.execute(const AConnection: IDatabaseConnection; const ADataSet: IDataSetReadOnly);

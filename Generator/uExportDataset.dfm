@@ -1,9 +1,9 @@
 object Frm_ExportDataset: TFrm_ExportDataset
   Left = 481
   Top = 118
-  Width = 647
-  Height = 542
   Caption = 'Export Dataset'
+  ClientHeight = 504
+  ClientWidth = 631
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

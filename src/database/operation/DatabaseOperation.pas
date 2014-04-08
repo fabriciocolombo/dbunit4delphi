@@ -3,7 +3,6 @@ unit DatabaseOperation;
 interface
 
 uses
-  SysUtils, Windows, Messages, Classes, Graphics, Controls, Forms, Dialogs,
   DatabaseConnection, DataSet;
 
 type

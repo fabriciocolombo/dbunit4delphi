@@ -24,7 +24,7 @@ uses MockDatabaseConnection, MockDatabaseOperation, MockXmlValidator,
 
 procedure TTestMockObjects.checkMockDatabaseConnection;
 begin
-  ExpectedException := EExpectationNotSatisfacted;
+  ExpectedException := EExpectationNotSatisfied;
   with TMockDatabaseConnection.Create as IMockDatabaseConnection do
   begin
     addExpectedStatement('select * from dual');
@@ -45,7 +45,7 @@ end;
 
 procedure TTestMockObjects.checkMockDatabaseOperation;
 begin
-  ExpectedException := EExpectationNotSatisfacted;
+  ExpectedException := EExpectationNotSatisfied;
   with TMockDatabaseOperation.Create as IMockDatabaseOperation do
   begin
     setExpectationCalls(1);
@@ -55,7 +55,7 @@ end;
 
 procedure TTestMockObjects.checkMockXmlValidator;
 begin
-  ExpectedException := EExpectationNotSatisfacted;
+  ExpectedException := EExpectationNotSatisfied;
   with TMockXmlValidator.Create as IMockXmlValidator do
   begin
     setExpectationCalls(1);

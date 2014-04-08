@@ -4,8 +4,6 @@ interface
 
 uses DatabaseConfigDBX;
 
-{$I ..\..\src\dbunit4delphi.inc}
-
 type
   TStubDatabaseConfigDBX = class(TDatabaseConfigDBX)
   private

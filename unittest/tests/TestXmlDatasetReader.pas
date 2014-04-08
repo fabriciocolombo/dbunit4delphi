@@ -23,6 +23,7 @@ type
     procedure NoFieldDefinition;
     procedure withDataSet;
     procedure withValidator;
+    procedure DataSetWithNullValues;
   end;
 
 implementation
@@ -50,6 +51,23 @@ begin
   CheckNotNull(vIterator.Next);
   CheckNotNull(vIterator.Next);
   CheckFalse(vIterator.HasNext);
+end;
+
+procedure TTestXmlDatasetReader.DataSetWithNullValues;
+const
+  sInitialXml = '<root><tabela col1="col1 row1" col2="null"/></root>';
+var
+  vDataSet: IDataSetReadOnly;
+begin
+  vDataSet := TXmlDataSetBuilder.newFromText(sInitialXml).build;
+
+  CheckNotNull(vDataSet);
+  CheckEquals(2, vDataSet.getFieldCount);
+  CheckEqualsString('tabela', vDataSet.getTableName);
+  CheckFalse(vDataSet.Eof);
+
+  CheckEqualsString('col1 row1', vDataSet.getField(0).AsString);
+  CheckTrue(vDataSet.getField(1).IsNull, 'Field must be null');
 end;
 
 procedure TTestXmlDatasetReader.CheckDataSampleFile;
