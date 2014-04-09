@@ -3,7 +3,7 @@ unit XmlDatasetReader;
 interface
 
 uses xmldom, XMLIntf, msxmldom, XMLDoc, SysUtils, DataSet, Exceptions, XmlValidator,
-     Classes;
+     Classes, DatabaseConnection;
 
 type
   TXmlReadingMode = (xmlFile, xmlText, xmlStream);
@@ -12,6 +12,7 @@ type
   ['{A9BD93A1-5DA4-4F79-9BDA-D9D6ACFF9BB1}']
     function withValidator(const AValidator: IXmlValidator): IXmlDataSetBuilder;
     function withDataSet(ADataSetClass: TAbstractDataSetClass): IXmlDataSetBuilder;
+    function usingConnection(const ADatabaseConnection: IDatabaseConnection): IXmlDataSetBuilder;
 
     function build: IDataSetReadOnly;
     function buildIterator: IDataSetIterator;
@@ -26,6 +27,7 @@ type
     FValidator: IXmlValidator;
     FDataSetClass: TAbstractDataSetClass;
     FReadingMode: TXmlReadingMode;
+    FDatabaseConnection: IDatabaseConnection;
 
     constructor CreateFromFile(AFileName: TFileName);
     constructor CreateFromText(AXmlText: String);
@@ -37,6 +39,7 @@ type
 
     function withValidator(const AValidator: IXmlValidator): IXmlDataSetBuilder;
     function withDataSet(ADataSetClass: TAbstractDataSetClass): IXmlDataSetBuilder;
+    function usingConnection(const ADatabaseConnection: IDatabaseConnection): IXmlDataSetBuilder;
 
     function build: IDataSetReadOnly;
     function buildIterator: IDataSetIterator;
@@ -49,6 +52,7 @@ type
   private
     FXml: IXMLDocument;
     FBuilder: TXmlDataSetBuilder;
+    FDatabaseConnection: IDatabaseConnection;
 
     procedure MetadataUpdate(const ADataSet: IDataSet; const ARowNode: IXMLNode);
 
@@ -56,7 +60,7 @@ type
 
     procedure LoadXML;
   public
-    constructor Create(ABuilder: TXmlDataSetBuilder);
+    constructor Create(ABuilder: TXmlDataSetBuilder; ADatabaseConnection: IDatabaseConnection);
 
     function ReadToDataset: IDataSetIterator;
 
@@ -67,7 +71,7 @@ type
 implementation
 
 uses DataSetDecorator, DataSetListBuilder, XmlClientDataSet,
-  DataSetIterator, XMLDomParseError;
+  DataSetIterator, XMLDomParseError, Data.DB;
 
 { TXmlDatasetReader }
 
@@ -78,9 +82,10 @@ begin
   FBuilder.FValidator.Validate(FXml);
 end;
 
-constructor TXmlDatasetReader.Create(ABuilder: TXmlDataSetBuilder);
+constructor TXmlDatasetReader.Create(ABuilder: TXmlDataSetBuilder; ADatabaseConnection: IDatabaseConnection);
 begin
   FBuilder := ABuilder;
+  FDatabaseConnection := ADatabaseConnection;
 end;
 
 destructor TXmlDatasetReader.Destroy;
@@ -129,42 +134,49 @@ procedure TXmlDatasetReader.MetadataUpdate(const ADataSet: IDataSet; const ARowN
 var
   int_attr: Integer;
   vColumnNode: IXMLNode;
+  vMetadata: TFieldListMetadata;
+  vMetaField: TField;
+  vFieldType: TFieldType;
+  vFieldSize: Integer;
+  vRequired: Boolean;
 begin
   if not ADataSet.IsInitMetadata then
   begin
-    (*
-    if MetadataAutoUpdate then
-    begin
-      for int_attr := 0 to vRowNode.AttributeNodes.Count-1 do
+    vMetadata := nil;
+    try
+      if Assigned(FDatabaseConnection) then
       begin
-        vColumns := vColumns + IfThen(vColumns <> EmptyStr, ';') + vRowNode.AttributeNodes.Get(int_attr);
+        vMetadata := FDatabaseConnection.getFields(ADataSet.getTableName);
       end;
 
-      if (vColumns <> vDataSet.getAllFields) then
+      for int_attr := 0 to ARowNode.AttributeNodes.Count-1 do
       begin
-        for int_attr := 0 to vRowNode.AttributeNodes.Count-1 do
+        vColumnNode := ARowNode.AttributeNodes.Get(int_attr);
+
+        vFieldType := ftString;
+        vFieldSize := 0;
+        vRequired := False;
+
+        if Assigned(vMetadata) then
         begin
-          //Procura o field pelo nome no dataset
-
-          //Se não existir adicionar o field
-
-          //rebuild o dataset
+          vMetaField := vMetadata.FindField(vColumnNode.NodeName);
+          if Assigned(vMetaField) then
+          begin
+            vFieldType := vMetaField.DataType;
+            vFieldSize := vMetaField.Size;
+            vRequired  := vMetaField.Required;
+          end;
         end;
+        ADataSet.AddField(vColumnNode.NodeName, vFieldType, vRequired, vFieldSize);
       end;
-    end else
-    begin
-    *)
-    for int_attr := 0 to ARowNode.AttributeNodes.Count-1 do
-    begin
-      vColumnNode := ARowNode.AttributeNodes.Get(int_attr);
 
-      ADataSet.AddField(vColumnNode.NodeName);
+      if ADataSet.getFieldCount = 0 then
+        raise ENoFieldDefinition.Create(ClassName, ADataSet.getTableName);
+
+      ADataSet.Build;
+    finally
+      vMetadata.Free;
     end;
-
-    if ADataSet.getFieldCount = 0 then
-      raise ENoFieldDefinition.Create(ClassName, ADataSet.getTableName);
-
-    ADataSet.Build;
   end;
 end;
 
@@ -240,7 +252,7 @@ var
 begin
   Assert(Assigned(FDataSetClass));
 
-  vReader := TXmlDatasetReader.Create(Self);
+  vReader := TXmlDatasetReader.Create(Self, FDatabaseConnection);
   try
     Result := vReader.ReadToDataset;
   finally
@@ -289,6 +301,12 @@ end;
 class function TXmlDataSetBuilder.newFromText(AXmlText: String): IXmlDataSetBuilder;
 begin
   Result := TXmlDataSetBuilder.CreateFromText(AXmlText);
+end;
+
+function TXmlDataSetBuilder.usingConnection(const ADatabaseConnection: IDatabaseConnection): IXmlDataSetBuilder;
+begin
+  FDatabaseConnection := ADatabaseConnection;
+  Result := Self;
 end;
 
 function TXmlDataSetBuilder.withDataSet(ADataSetClass: TAbstractDataSetClass): IXmlDataSetBuilder;

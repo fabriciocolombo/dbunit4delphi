@@ -1,4 +1,10 @@
+*.dcu
+*.~*~
 *.local
+*.identcache
+__history
+*.tvsconfig
+*.map
 target
 unittest/db/SAMPLE.FDB
 bin/dbunit4delphiR7.dcp

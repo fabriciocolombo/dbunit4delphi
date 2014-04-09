@@ -22,7 +22,7 @@ object Frm_ExportDataset: TFrm_ExportDataset
     Top = 0
     Width = 639
     Height = 467
-    ActivePage = TabSheet_Fields
+    ActivePage = TabSheet_Export
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
     TabStop = False
@@ -233,6 +233,19 @@ object Frm_ExportDataset: TFrm_ExportDataset
           'Single file'
           'One file per table')
         TabOrder = 1
+      end
+      object RGEncoding: TRadioGroup
+        Left = 317
+        Top = 12
+        Width = 245
+        Height = 37
+        Caption = ' Encoding '
+        Columns = 2
+        ItemIndex = 0
+        Items.Strings = (
+          'UTF-8'
+          'ANSI')
+        TabOrder = 2
       end
     end
   end

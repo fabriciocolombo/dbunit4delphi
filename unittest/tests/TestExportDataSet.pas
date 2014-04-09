@@ -107,7 +107,7 @@ begin
   TDataExporter
     .CreateWithConnection(FConnection)
     .WithTableName('Dual')
-      .ExportToXmlFile(vFileName);
+      .ExportToXmlFile(vFileName, TEncoding.ANSI);
 
   CheckTrue(FileExists(vFileName), Format('File "%s" are not created.',[vFileName]));
 

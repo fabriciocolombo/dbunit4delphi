@@ -11,6 +11,10 @@ uses
 const
   EXPORT_STYLE_SINGLE_FILE = 0;
   EXPORT_STYLE_ONE_PER_TABLE = 1;
+
+  EXPORT_ENCODING_UTF8 = 0;
+  EXPORT_ENCODING_ANSI = 1;
+
   DEFAULT_EXTENSION = '.xml';
 
   sWhereClauseCaption = ' Where clause for [%s] ';
@@ -52,6 +56,7 @@ type
     Memo_WhereClause: TMemo;
     btnLoadTables: TSpeedButton;
     acLoadTables: TAction;
+    RGEncoding: TRadioGroup;
     procedure edTableFilterChange(Sender: TObject);
     procedure DBGrid_TablesDblClick(Sender: TObject);
     procedure acCancelExecute(Sender: TObject);
@@ -283,7 +288,14 @@ var
   i: Integer;
   vTable: TTableForExport;
   vExporter: IDataExporter;
+  vEncoding: TEncoding;
 begin
+  case RGEncoding.ItemIndex of
+    EXPORT_ENCODING_UTF8: vEncoding := TEncoding.UTF8;
+  else
+    vEncoding := TEncoding.ANSI;
+  end;
+
   case RadioGroupOutputStyle.ItemIndex of
     EXPORT_STYLE_SINGLE_FILE:
       begin
@@ -296,7 +308,7 @@ begin
           vExporter.WithQueryText(vTable.TableName, vTable.GetQuery);
         end;
 
-        vExporter.ExportToXmlFile(edPath.Text);
+        vExporter.ExportToXmlFile(edPath.Text, vEncoding);
       end;
     EXPORT_STYLE_ONE_PER_TABLE:
       begin
@@ -308,7 +320,7 @@ begin
 
           TDataExporter.CreateWithConnection(DMGenerator.Connection)
             .WithQueryText(vTable.TableName, vTable.GetQuery)
-            .ExportToXmlFile(Format('%s%s.xml',[edPath.Text, vTable.TableName]));
+            .ExportToXmlFile(Format('%s%s.xml',[edPath.Text, vTable.TableName]), vEncoding);
         end;
       end;
   end;

@@ -46,7 +46,7 @@ type
     constructor Create;override;
     destructor Destroy; override;
 
-    function AddField(AFieldName: String; AFieldType: TFieldType = ftString; ARequired: Boolean=False): IDataSet;override;
+    function AddField(AFieldName: String; AFieldType: TFieldType = ftString; ARequired: Boolean=False; AFieldSize: Integer=0): IDataSet;override;
     function Build: IDataSet;override;
 
     function GetActive: Boolean;override;
@@ -76,7 +76,7 @@ uses Field, StrUtils;
 
 { TXmlClientDataSet }
 
-function TXmlClientDataSet.AddField(AFieldName: String; AFieldType: TFieldType; ARequired: Boolean  ): IDataSet;
+function TXmlClientDataSet.AddField(AFieldName: String; AFieldType: TFieldType; ARequired: Boolean; AFieldSize: Integer): IDataSet;
 begin
   with DefaultFieldClasses[AFieldType].Create(FDataSet) do
   begin
@@ -84,6 +84,11 @@ begin
     FieldKind := fkData;
     Required  := ARequired;
     DataSet   := FDataSet;
+
+    if AFieldSize > 0 then
+    begin
+      Size := AFieldSize;
+    end;
   end;
 
   FAllFields := FAllFields + IfThen(FAllFields <> EmptyStr, ';') + AFieldName;

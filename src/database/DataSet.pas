@@ -34,7 +34,7 @@ type
 
     function IsInitMetadata: Boolean;
 
-    function AddField(AFieldName: String; AFieldType: TFieldType = ftString; ARequired: Boolean=False): IDataSet;
+    function AddField(AFieldName: String; AFieldType: TFieldType = ftString; ARequired: Boolean=False; AFieldSize: Integer = 0): IDataSet;
     function Build: IDataSet;
 
     function BeginInsert: IDataSet;
@@ -52,7 +52,7 @@ type
   TAbstractDataSet = class(TInterfacedObject, IDataSet)
   private
   public
-    function AddField(AFieldName: String;AFieldType: TFieldType = ftString;ARequired: Boolean = False): IDataSet;virtual;abstract;
+    function AddField(AFieldName: String;AFieldType: TFieldType = ftString;ARequired: Boolean = False; AFieldSize: Integer = 0): IDataSet;virtual;abstract;
     function AddRow(AField: String; AValue: String): IDataSet;virtual;abstract;
     function BeginInsert: IDataSet;virtual;abstract;
     function Build: IDataSet;virtual;abstract;

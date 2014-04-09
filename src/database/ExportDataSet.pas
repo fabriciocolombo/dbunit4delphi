@@ -2,7 +2,7 @@ unit ExportDataSet;
 
 interface
 
-uses DatabaseConnection, Classes, DB;
+uses DatabaseConnection, Classes, DB, SysUtils;
 
 type
   IExportableDataSet = interface
@@ -31,7 +31,7 @@ type
     function WithMultipleTables(ATableNames: TStrings): IDataExporter;overload;
 
     function ExportAsXmlText: String;
-    procedure ExportToXmlFile(const AFileName: String);
+    procedure ExportToXmlFile(const AFileName: String; AEncoding: TEncoding);
   end;
 
   TDataExporter = class(TInterfacedObject, IDataExporter)
@@ -56,7 +56,7 @@ type
     function WithMultipleTables(ATableNames: Array of String): IDataExporter;overload;
     function WithMultipleTables(ATableNames: TStrings): IDataExporter;overload;
 
-    procedure ExportToXmlFile(const AFileName: String);
+    procedure ExportToXmlFile(const AFileName: String; AEncoding: TEncoding);
   end;
 
 const
@@ -65,7 +65,7 @@ const
 
 implementation
 
-uses StatementBuilder, SysUtils, Query, Formatter;
+uses StatementBuilder, Query, Formatter;
 
 { TDataExporter }
 
@@ -134,17 +134,16 @@ begin
             Format('</%s>',[sRootDataSet]);
 end;
 
-procedure TDataExporter.ExportToXmlFile(const AFileName: String);
+procedure TDataExporter.ExportToXmlFile(const AFileName: String; AEncoding: TEncoding);
 var
-  vFile: TextFile;
+  vWriter: TStreamWriter;
 begin
-  AssignFile(vFile, AFileName);
+  vWriter := TStreamWriter.Create(TFileStream.Create(AFileName, fmCreate or fmOpenWrite), AEncoding);
   try
-    Rewrite(vFile);
-
-    Write(vFile, UTF8Encode(ExportAsXmlText));
+    vWriter.OwnStream;
+    vWriter.Write(ExportAsXmlText);
   finally
-    CloseFile(vFile);
+    vWriter.Free;
   end;
 end;
 

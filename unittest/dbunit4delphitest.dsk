@@ -15,26 +15,22 @@ File_12=TSourceModule,'C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\unit
 File_13=TSourceModule,'C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\unittest\TestUtils.pas',0,1,1,1,9,0,0,,
 
 [Modules]
-Module0=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\unittest\dbunit4delphitest.dproj
-Module1=default.htm
-Module2=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DatabaseConfig.pas
-Module3=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementUpdateBuilder.pas
-Module4=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementSelectBuilder.pas
-Module5=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementInsertBuilder.pas
-Module6=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementDeleteBuilder.pas
-Module7=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementBuilder.pas
-Module8=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\Statement.pas
-Module9=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\CustomStatementBuilder.pas
-Module10=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\Table.pas
-Module11=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\Query.pas
-Module12=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DataSet.pas
-Module13=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\operation\DatabaseOperation.pas
-Module14=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DatabaseConnection.pas
-Count=15
+Module0=default.htm
+Module1=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DatabaseConfig.pas
+Module2=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementUpdateBuilder.pas
+Module3=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementSelectBuilder.pas
+Module4=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementInsertBuilder.pas
+Module5=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementDeleteBuilder.pas
+Module6=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementBuilder.pas
+Module7=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\Statement.pas
+Module8=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\CustomStatementBuilder.pas
+Module9=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\Table.pas
+Module10=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\Query.pas
+Module11=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DataSet.pas
+Module12=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\operation\DatabaseOperation.pas
+Module13=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DatabaseConnection.pas
+Count=14
 EditWindowCount=1
-
-[C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\unittest\dbunit4delphitest.dproj]
-ModuleType=TBaseProject
 
 [default.htm]
 ModuleType=TURLModule
@@ -105,8 +101,8 @@ FormState=0
 FormOnTop=0
 
 [EditWindow0]
-ViewCount=15
-CurrentEditView=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\unittest\dbunit4delphitest.dpr
+ViewCount=14
+CurrentView=0
 View0=0
 View1=1
 View2=2
@@ -121,7 +117,6 @@ View10=10
 View11=11
 View12=12
 View13=13
-View14=14
 PercentageSizes=1
 Create=1
 Visible=1
@@ -140,13 +135,13 @@ BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1464
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=000008000101000000004C0B00000000000001B8050000000000000100000000580E000009000000446F636B53697465330100000000171400001100000050726F7065727479496E73706563746F72FFFFFFFF
+LeftPanelData=00000800010100000000A51200000000000001B8050000000000000100000000580E000009000000446F636B536974653301000000002A2100001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=1720
 RightPanelClients=DockSite2,DockSite4
-RightPanelData=000008000101000000004C0B00000000000001B80600000000000001000000004212000009000000446F636B536974653201000000001714000009000000446F636B5369746534FFFFFFFF
-BottomPanelSize=3307
+RightPanelData=00000800010100000000A51200000000000001B80600000000000001000000004212000009000000446F636B536974653201000000002A21000009000000446F636B5369746534FFFFFFFF
+BottomPanelSize=0
 BottomPanelClients=DockSite1,MessageView
-BottomPanelData=0000080001020100000009000000446F636B53697465317A4500000000000002EB0C00000000000001000000007A4500000F0000004D65737361676556696577466F726DFFFFFFFF
+BottomPanelData=0000080001020200000009000000446F636B53697465310F0000004D65737361676556696577466F726D1534000000000000022806000000000000FFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0
 BottomMiddelPanelData=0000080001020100000009000000446F636B53697465309A1D00000000000002EB06000000000000FFFFFFFF
@@ -157,17 +152,6 @@ WelcomePageURL=bds:/default.htm
 
 [View1]
 CustomEditViewType=TEditView
-Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\unittest\dbunit4delphitest.dpr
-CursorX=1
-CursorY=67
-TopLine=60
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\unittest\dbunit4delphitest.dpr
-
-[View2]
-CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DatabaseConnection.pas
 CursorX=22
 CursorY=6
@@ -177,7 +161,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DatabaseConnection.pas
 
-[View3]
+[View2]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DataSet.pas
 CursorX=3
@@ -188,7 +172,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DataSet.pas
 
-[View4]
+[View3]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\Query.pas
 CursorX=12
@@ -199,7 +183,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\Query.pas
 
-[View5]
+[View4]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\Table.pas
 CursorX=1
@@ -210,7 +194,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\Table.pas
 
-[View6]
+[View5]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\CustomStatementBuilder.pas
 CursorX=26
@@ -221,7 +205,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\CustomStatementBuilder.pas
 
-[View7]
+[View6]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\Statement.pas
 CursorX=13
@@ -232,7 +216,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\Statement.pas
 
-[View8]
+[View7]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementBuilder.pas
 CursorX=1
@@ -243,7 +227,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementBuilder.pas
 
-[View9]
+[View8]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementDeleteBuilder.pas
 CursorX=13
@@ -254,7 +238,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementDeleteBuilder.pas
 
-[View10]
+[View9]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementInsertBuilder.pas
 CursorX=3
@@ -265,7 +249,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementInsertBuilder.pas
 
-[View11]
+[View10]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementSelectBuilder.pas
 CursorX=13
@@ -276,7 +260,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementSelectBuilder.pas
 
-[View12]
+[View11]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementUpdateBuilder.pas
 CursorX=13
@@ -287,7 +271,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\statement\StatementUpdateBuilder.pas
 
-[View13]
+[View12]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DatabaseConfig.pas
 CursorX=13
@@ -298,7 +282,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\DatabaseConfig.pas
 
-[View14]
+[View13]
 CustomEditViewType=TEditView
 Module=C:\Desenvolvimento\OpenSource\fabricio\dbunit4delphi\src\database\operation\DatabaseOperation.pas
 CursorX=5
@@ -323,11 +307,11 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=2830
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=2830
+ClientHeight=1071
 TBDockHeight=220
 LRDockWidth=13602
 Dockable=1
@@ -387,18 +371,18 @@ StayOnTop=0
 [MessageView]
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=0
-Top=23
-Width=10000
-Height=3173
+Top=0
+Width=2767
+Height=1415
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=10000
-ClientHeight=3173
-TBDockHeight=3173
+ClientWidth=2767
+ClientHeight=1415
+TBDockHeight=1415
 LRDockWidth=2767
 Dockable=1
 StayOnTop=0
@@ -412,11 +396,11 @@ State=0
 Left=0
 Top=0
 Width=1720
-Height=179
+Height=3709
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1720
-ClientHeight=179
+ClientHeight=3709
 TBDockHeight=7157
 LRDockWidth=1999
 Dockable=1
@@ -431,12 +415,12 @@ State=0
 Left=0
 Top=305
 Width=1464
-Height=1236
+Height=4766
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1464
-ClientHeight=1236
-TBDockHeight=6580
+ClientHeight=4766
+TBDockHeight=8613
 LRDockWidth=1464
 Dockable=1
 StayOnTop=0
@@ -448,8 +432,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-1047
-Top=-37
+Left=-1131
+Top=-101
 Width=2840
 Height=6209
 MaxLeft=-1
@@ -468,7 +452,7 @@ Visible=0
 Docked=1
 State=0
 Left=-1248
-Top=159
+Top=-101
 Width=278
 Height=357
 MaxLeft=-1
@@ -492,11 +476,11 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=2830
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=2830
+ClientHeight=1071
 TBDockHeight=412
 LRDockWidth=4949
 Dockable=1
@@ -510,12 +494,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=5000
-Height=1360
+Width=3821
+Height=1071
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=5000
-ClientHeight=1360
+ClientWidth=3821
+ClientHeight=1071
 TBDockHeight=220
 LRDockWidth=7408
 Dockable=1
@@ -534,11 +518,11 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=2830
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=2830
+ClientHeight=1071
 TBDockHeight=1538
 LRDockWidth=3485
 Dockable=1
@@ -553,11 +537,11 @@ State=0
 Left=0
 Top=0
 Width=3821
-Height=2830
+Height=1071
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=2830
+ClientHeight=1071
 TBDockHeight=2060
 LRDockWidth=3485
 Dockable=1
@@ -572,11 +556,11 @@ State=0
 Left=0
 Top=0
 Width=2335
-Height=893
+Height=1140
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2335
-ClientHeight=893
+ClientHeight=1140
 TBDockHeight=2321
 LRDockWidth=2826
 Dockable=1
@@ -610,11 +594,11 @@ State=0
 Left=0
 Top=0
 Width=2335
-Height=1140
+Height=907
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2335
-ClientHeight=1140
+ClientHeight=907
 TBDockHeight=1154
 LRDockWidth=3675
 Dockable=1
@@ -637,11 +621,11 @@ State=0
 Left=0
 Top=0
 Width=1720
-Height=6236
+Height=8269
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1720
-ClientHeight=6236
+ClientHeight=8269
 TBDockHeight=4876
 LRDockWidth=7152
 Dockable=1
@@ -656,11 +640,11 @@ State=0
 Left=0
 Top=0
 Width=1720
-Height=6236
+Height=8269
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1720
-ClientHeight=6236
+ClientHeight=8269
 TBDockHeight=4876
 LRDockWidth=5307
 Dockable=1
@@ -673,7 +657,7 @@ Visible=0
 Docked=1
 State=0
 Left=-100
-Top=-99
+Top=-101
 Width=1845
 Height=3146
 MaxLeft=-1
@@ -731,12 +715,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=5000
-Height=1360
+Width=3821
+Height=1071
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=5000
-ClientHeight=1360
+ClientWidth=3821
+ClientHeight=1071
 TBDockHeight=1552
 LRDockWidth=8741
 Dockable=1
@@ -823,14 +807,14 @@ Visible=0
 Docked=1
 State=0
 Left=0
-Top=23
+Top=0
 Width=3821
-Height=3173
+Height=1415
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3821
-ClientHeight=3173
-TBDockHeight=3173
+ClientHeight=1415
+TBDockHeight=1415
 LRDockWidth=3821
 Dockable=1
 StayOnTop=0
@@ -854,7 +838,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1720
 ClientHeight=4560
-TBDockHeight=6580
+TBDockHeight=8613
 LRDockWidth=1720
 Dockable=1
 StayOnTop=0
@@ -878,7 +862,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1464
 ClientHeight=3503
-TBDockHeight=6580
+TBDockHeight=8613
 LRDockWidth=1464
 Dockable=1
 StayOnTop=0
@@ -897,12 +881,12 @@ State=0
 Left=0
 Top=382
 Width=1720
-Height=179
+Height=3709
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1720
-ClientHeight=179
-TBDockHeight=6580
+ClientHeight=3709
+TBDockHeight=8613
 LRDockWidth=1720
 Dockable=1
 StayOnTop=0
