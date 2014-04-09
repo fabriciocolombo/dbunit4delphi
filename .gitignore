@@ -15,3 +15,5 @@ bin/dbunit4delphitest.drc
 bpg/ProjectGroup_dbunit4delphi.dsk
 git-remove-history.sh
 CodeCoverage.exe
+Arquivos.txt
+coverage.log

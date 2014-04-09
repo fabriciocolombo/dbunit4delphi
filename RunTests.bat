@@ -1,3 +1,7 @@
 @echo off
 
-call bin\dbunit4delphitest.exe -xml
+cd bin
+
+call dbunit4delphitest.exe -text
+
+cd ..

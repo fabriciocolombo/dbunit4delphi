@@ -1,11 +1,10 @@
-@echo off
+rmdir target\CoverageReports /S /Q
+mkdir target\CoverageReports
 
-cd unittest
-rmdir ..\target\coverage /S /Q
-mkdir ..\target\coverage
+dir src\*.pas /S /B > Arquivos.txt
 
-CodeCoverage.exe -e ..\bin\dbunit4delphitest.exe -m ..\bin\dbunit4delphitest.map -od ..\target\coverage -uf dbunit4delphitest.dpr -a /text
+cd bin
+
+cmd /C CodeCoverage -e dbunit4delphitest.exe -uf ..\Arquivos.txt -od ..\target\CoverageReports -a /text -lt ..\coverage.log -sp ..\src ..\src\database ..\src\database\dbx ..\src\database\operation  ..\src\statement ..\src\xml -xml -html
 
 cd ..
-
-call target\coverage\CodeCoverage_summary.html

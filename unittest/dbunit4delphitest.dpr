@@ -1,8 +1,6 @@
 program dbunit4delphitest;
 
-{$IFDEF AsConsole}
-  {$AppType Console}
-{$ENDIF}
+{$AppType Console}
 
 uses
   FastMM4,
