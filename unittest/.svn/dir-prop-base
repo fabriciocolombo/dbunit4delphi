@@ -1,9 +1,0 @@
-K 10
-svn:ignore
-V 99
-dbunit4delphitest.drc
-dbunit4delphitest.map
-dbunit4delphitest_MemoryManager_EventosLog.txt
-reports
-
-END
