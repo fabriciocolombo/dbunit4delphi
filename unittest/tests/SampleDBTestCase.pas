@@ -2,12 +2,12 @@ unit SampleDBTestCase;
 
 interface
 
-uses TestCaseExtension,  DBTestCase, DatabaseConnection, DataSet, DataSetDecorator,
+uses TestCaseExtension,  DBUnitTestCase, DatabaseConnection, DataSet, DataSetDecorator,
   DataSetListBuilder, XmlClientDataSet, XmlDatasetReader, XmlValidator,
   DatabaseConfig, MockDatabaseConnection, DatabaseOperation, Windows;
 
 type
-  TSampleDBTestCase = class(TDBTestCase)
+  TSampleDBTestCase = class(TDBUnitTestCase)
   private
     FConnection: Boolean;
     FDataSet: Boolean;

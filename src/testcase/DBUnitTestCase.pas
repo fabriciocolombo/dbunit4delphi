@@ -1,4 +1,4 @@
-unit DBTestCase;
+unit DBUnitTestCase;
 
 interface
 
@@ -6,7 +6,7 @@ uses TestCaseExtension, DatabaseOperation, DatabaseConnection, DataSet, Database
      DatabaseConnectionFactory, DatabaseConfig;
 
 type
-  TDBTestCase = class(TTestCaseExtension)
+  TDBUnitTestCase = class(TTestCaseExtension)
   private
     FConnection: IDatabaseConnection;
   protected
@@ -29,9 +29,9 @@ implementation
 uses NoneOperation;
 
 
-{ TDBTestCase }
+{ TDBUnitTestCase }
 
-function TDBTestCase.getConnection: IDatabaseConnection;
+function TDBUnitTestCase.getConnection: IDatabaseConnection;
 begin
   if not Assigned(FConnection) then
   begin
@@ -41,7 +41,7 @@ begin
   Result := FConnection;
 end;
 
-procedure TDBTestCase.SetUp;
+procedure TDBUnitTestCase.SetUp;
 begin
   inherited;
   FConnection := getConnection;
@@ -53,12 +53,12 @@ begin
   setUpOperation.execute(FConnection, getDataSet);
 end;
 
-function TDBTestCase.setUpOperation: IDatabaseOperation;
+function TDBUnitTestCase.setUpOperation: IDatabaseOperation;
 begin
   Result := TDatabaseOperation.CLEAN_INSERT;
 end;
 
-procedure TDBTestCase.TearDown;
+procedure TDBUnitTestCase.TearDown;
 begin
   try
     tearDownOperation.execute(FConnection, getDataSet);
@@ -71,7 +71,7 @@ begin
   inherited;
 end;
 
-function TDBTestCase.tearDownOperation: IDatabaseOperation;
+function TDBUnitTestCase.tearDownOperation: IDatabaseOperation;
 begin
   Result := TDatabaseOperation.NONE;
 end;

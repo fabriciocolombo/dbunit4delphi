@@ -35,7 +35,7 @@ uses
   TestMockObjects in 'tests\TestMockObjects.pas',
   TestExportDataSet in 'tests\TestExportDataSet.pas',
   TesteMetadata in 'tests\TesteMetadata.pas',
-  DBTestCase in '..\src\testcase\DBTestCase.pas',
+  DBUnitTestCase in '..\src\testcase\DBUnitTestCase.pas',
   Exceptions in '..\src\Exceptions.pas',
   Formatter in '..\src\Formatter.pas',
   DatabaseConfig in '..\src\database\DatabaseConfig.pas',

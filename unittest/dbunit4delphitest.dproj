@@ -122,7 +122,7 @@
 			<DCCReference Include="tests\TestMockObjects.pas"/>
 			<DCCReference Include="tests\TestExportDataSet.pas"/>
 			<DCCReference Include="tests\TesteMetadata.pas"/>
-			<DCCReference Include="..\src\testcase\DBTestCase.pas"/>
+			<DCCReference Include="..\src\testcase\DBUnitTestCase.pas"/>
 			<DCCReference Include="..\src\Exceptions.pas"/>
 			<DCCReference Include="..\src\Formatter.pas"/>
 			<DCCReference Include="..\src\database\DatabaseConfig.pas"/>
