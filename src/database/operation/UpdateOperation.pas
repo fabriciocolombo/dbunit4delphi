@@ -9,7 +9,7 @@ type
   public
     procedure execute(const AConnection: IDatabaseConnection; const ADataSet: IDataSetReadOnly);
 
-    class function BuildUpdateStatement(const ADataSet: IDataSetReadOnly;AMetadata: TFieldListMetadata): IStatement;
+    class function BuildUpdateStatement(const ADataSet: IDataSetReadOnly;const AMetadata: IFieldListMetadata): IStatement;
   end;
 
 
@@ -21,7 +21,7 @@ uses Formatter, StatementBuilder, StatementUpdateBuilder;
 
 { TUpdateOperation }
 
-class function TUpdateOperation.BuildUpdateStatement(const ADataSet: IDataSetReadOnly;AMetadata: TFieldListMetadata): IStatement;
+class function TUpdateOperation.BuildUpdateStatement(const ADataSet: IDataSetReadOnly;const AMetadata: IFieldListMetadata): IStatement;
 var
   vUpdate: IStatementUpdateBuilder;
   int_field: Integer;
@@ -54,24 +54,20 @@ end;
 
 procedure TUpdateOperation.execute(const AConnection: IDatabaseConnection; const ADataSet: IDataSetReadOnly);
 var
-  vMetadata: TFieldListMetadata;
+  vMetadata: IFieldListMetadata;
   vStatement: IStatement;
 begin
   inherited;
 
   vMetadata := AConnection.getFields(ADataSet.getTableName);
-  try
-    ADataSet.First;
-    while not ADataSet.Eof do
-    begin
-      vStatement := BuildUpdateStatement(ADataSet, vMetadata);
+  ADataSet.First;
+  while not ADataSet.Eof do
+  begin
+    vStatement := BuildUpdateStatement(ADataSet, vMetadata);
 
-      AConnection.Execute(vStatement);
+    AConnection.Execute(vStatement);
 
-      ADataSet.Next;
-    end;
-  finally
-    vMetadata.Free;
+    ADataSet.Next;
   end;
 end;
 

@@ -21,29 +21,26 @@ uses Statement, InsertOperation, UpdateOperation;
 
 procedure TRefreshOperation.execute(const AConnection: IDatabaseConnection;const ADataSet: IDataSetReadOnly);
 var
-  vMetadata: TFieldListMetadata;
+  vMetadata: IFieldListMetadata;
   vStatement: IStatement;
 begin
   inherited;
 
   vMetadata := AConnection.getFields(ADataSet.getTableName);
-  try
-    ADataSet.First;
-    while not ADataSet.Eof do
+
+  ADataSet.First;
+  while not ADataSet.Eof do
+  begin
+    vStatement := TUpdateOperation.BuildUpdateStatement(ADataSet, vMetadata);
+
+    if (AConnection.Execute(vStatement) <= 0) then
     begin
-      vStatement := TUpdateOperation.BuildUpdateStatement(ADataSet, vMetadata);
+      vStatement := TInsertOperation.BuildInsertStatement(ADataSet, vMetadata);
 
-      if (AConnection.Execute(vStatement) <= 0) then
-      begin
-        vStatement := TInsertOperation.BuildInsertStatement(ADataSet, vMetadata);
-
-        AConnection.Execute(vStatement);
-      end;
-
-      ADataSet.Next;
+      AConnection.Execute(vStatement);
     end;
-  finally
-    vMetadata.Free;
+
+    ADataSet.Next;
   end;
 end;
 

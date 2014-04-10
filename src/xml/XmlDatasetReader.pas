@@ -134,7 +134,7 @@ procedure TXmlDatasetReader.MetadataUpdate(const ADataSet: IDataSet; const ARowN
 var
   int_attr: Integer;
   vColumnNode: IXMLNode;
-  vMetadata: TFieldListMetadata;
+  vMetadata: IFieldListMetadata;
   vMetaField: TField;
   vFieldType: TFieldType;
   vFieldSize: Integer;
@@ -143,40 +143,37 @@ begin
   if not ADataSet.IsInitMetadata then
   begin
     vMetadata := nil;
-    try
-      if Assigned(FDatabaseConnection) then
-      begin
-        vMetadata := FDatabaseConnection.getFields(ADataSet.getTableName);
-      end;
 
-      for int_attr := 0 to ARowNode.AttributeNodes.Count-1 do
-      begin
-        vColumnNode := ARowNode.AttributeNodes.Get(int_attr);
-
-        vFieldType := ftString;
-        vFieldSize := 0;
-        vRequired := False;
-
-        if Assigned(vMetadata) then
-        begin
-          vMetaField := vMetadata.FindField(vColumnNode.NodeName);
-          if Assigned(vMetaField) then
-          begin
-            vFieldType := vMetaField.DataType;
-            vFieldSize := vMetaField.Size;
-            vRequired  := vMetaField.Required;
-          end;
-        end;
-        ADataSet.AddField(vColumnNode.NodeName, vFieldType, vRequired, vFieldSize);
-      end;
-
-      if ADataSet.getFieldCount = 0 then
-        raise ENoFieldDefinition.Create(ClassName, ADataSet.getTableName);
-
-      ADataSet.Build;
-    finally
-      vMetadata.Free;
+    if Assigned(FDatabaseConnection) then
+    begin
+      vMetadata := FDatabaseConnection.getFields(ADataSet.getTableName);
     end;
+
+    for int_attr := 0 to ARowNode.AttributeNodes.Count-1 do
+    begin
+      vColumnNode := ARowNode.AttributeNodes.Get(int_attr);
+
+      vFieldType := ftString;
+      vFieldSize := 0;
+      vRequired := False;
+
+      if Assigned(vMetadata) then
+      begin
+        vMetaField := vMetadata.FindField(vColumnNode.NodeName);
+        if Assigned(vMetaField) then
+        begin
+          vFieldType := vMetaField.DataType;
+          vFieldSize := vMetaField.Size;
+          vRequired  := vMetaField.Required;
+        end;
+      end;
+      ADataSet.AddField(vColumnNode.NodeName, vFieldType, vRequired, vFieldSize);
+    end;
+
+    if ADataSet.getFieldCount = 0 then
+      raise ENoFieldDefinition.Create(ClassName, ADataSet.getTableName);
+
+    ADataSet.Build;
   end;
 end;
 

@@ -46,19 +46,15 @@ end;
 procedure TTestDatabaseConnectionDBX.GetFields;
 var
   vConn: IDatabaseConnection;
-  vFields: TFieldListMetadata;
+  vFields: IFieldListMetadata;
 begin
   vConn := ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX);
 
   vFields := vConn.getFields('DUAL');
-  try
-    CheckEquals(1, vFields.Count, 'FieldListMetadata size');
-    CheckEqualsText('Dummy', vFields.Fields[0].FieldName);
-    CheckEquals(Ord(ftString), Ord(vFields.Fields[0].DataType));
-    CheckEquals(1, vFields.Fields[0].Size);
-  finally
-    vFields.Free;
-  end;
+  CheckEquals(1, vFields.Count, 'FieldListMetadata size');
+  CheckEqualsText('Dummy', vFields.Fields[0].FieldName);
+  CheckEquals(Ord(ftString), Ord(vFields.Fields[0].DataType));
+  CheckEquals(1, vFields.Fields[0].Size);
 end;
 
 procedure TTestDatabaseConnectionDBX.invalidConfigClass;

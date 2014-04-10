@@ -24,7 +24,7 @@ type
     procedure AfterConstruction; override;
     destructor Destroy; override;
 
-    function getFields(ATableName: String): TFieldListMetadata;
+    function getFields(ATableName: String): IFieldListMetadata;
 
     procedure addExpectedStatement(AStatements: String);
     procedure checkCalls;
@@ -74,7 +74,7 @@ begin
   Result := ExecuteWithParams(AStatement);
 end;
 
-function TMockDatabaseConnection.getFields(ATableName: String): TFieldListMetadata;
+function TMockDatabaseConnection.getFields(ATableName: String): IFieldListMetadata;
 begin
   Result := TFieldListMetadata.Create;
 

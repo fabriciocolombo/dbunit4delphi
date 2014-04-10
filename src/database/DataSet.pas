@@ -74,7 +74,25 @@ type
 
   TAbstractDataSetClass = class of TAbstractDataSet;
 
-  TFieldListMetadata = class
+  IFieldListMetadata = interface
+  ['{905AEB61-9321-41C2-B521-9492E5764617}']
+    function GetCount: Integer;
+    function GetFields(AIndex: Integer): TField;
+
+    property Count: Integer read GetCount;
+    property Fields[AIndex: Integer]: TField read GetFields;
+
+    procedure AddField(AField: TField);overload;
+    function AddField(AFieldName: String; AFieldType: TFieldType): TField;overload;
+    procedure PopulateFromFieldList(AFieldList: TFields);
+
+    function FindField(AFieldName: String): TField;
+    function FieldByName(AFieldName: String): TField;
+
+    function IsPrimaryKeyField(AField: TField): Boolean;
+  end;
+
+  TFieldListMetadata = class(TInterfacedObject, IFieldListMetadata)
   private
     FList: TStringList;
     function GetCount: Integer;

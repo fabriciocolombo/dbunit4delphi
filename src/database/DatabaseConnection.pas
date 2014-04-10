@@ -27,7 +27,7 @@ type
 
     function Execute(const AStatement: IStatement): Integer;
 
-    function getFields(ATableName: String): TFieldListMetadata;
+    function getFields(ATableName: String): IFieldListMetadata;
     procedure getTableNames(AList: TStrings); 
   end;
 

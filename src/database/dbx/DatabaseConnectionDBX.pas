@@ -36,7 +36,7 @@ type
     function ExecuteWithParams(const AStatement: IStatement): Integer;
 
     //TODO - Carregar informação de que o campo é PK
-    function getFields(ATableName: String): TFieldListMetadata;
+    function getFields(ATableName: String): IFieldListMetadata;
     procedure getTableNames(AList: TStrings);
   end;
 
@@ -118,7 +118,7 @@ begin
   Result := FSqlConnection.Execute(AStatement.Command, AStatement.Params);
 end;
 
-function TDatabaseConnectionDBX.getFields(ATableName: String): TFieldListMetadata;
+function TDatabaseConnectionDBX.getFields(ATableName: String): IFieldListMetadata;
 var
   qry: TSQLQuery;
 begin

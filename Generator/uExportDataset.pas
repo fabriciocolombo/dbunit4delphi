@@ -259,7 +259,7 @@ end;
 
 procedure TFrm_ExportDataset.ListBox_TablesFieldsClick(Sender: TObject);
 var
-  vFields: TFieldListMetadata;
+  vFields: IFieldListMetadata;
   vTable: String;
   i: Integer;
 begin

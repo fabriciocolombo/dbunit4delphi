@@ -11,7 +11,7 @@ type
   public
     procedure execute(const AConnection: IDatabaseConnection; const ADataSet: IDataSetReadOnly);
 
-    class function BuildInsertStatement(const ADataSet: IDataSetReadOnly;AMetadata: TFieldListMetadata): IStatement;
+    class function BuildInsertStatement(const ADataSet: IDataSetReadOnly;const AMetadata: IFieldListMetadata): IStatement;
   end;
 
 
@@ -21,7 +21,7 @@ uses Formatter;
 
 { TInsertOperation }
 
-class function TInsertOperation.BuildInsertStatement(const ADataSet: IDataSetReadOnly; AMetadata: TFieldListMetadata): IStatement;
+class function TInsertOperation.BuildInsertStatement(const ADataSet: IDataSetReadOnly;const AMetadata: IFieldListMetadata): IStatement;
 var
   vInsert: IStatementInsertBuilder;
   int_field: Integer;
@@ -49,7 +49,7 @@ end;
 
 procedure TInsertOperation.execute(const AConnection: IDatabaseConnection; const ADataSet: IDataSetReadOnly);
 var
-  vMetadata: TFieldListMetadata;
+  vMetadata: IFieldListMetadata;
   vStatement: IStatement;
 begin
   inherited;
@@ -58,13 +58,10 @@ begin
   while not ADataSet.Eof do
   begin
     vMetadata := AConnection.getFields(ADataSet.getTableName);
-    try
-      vStatement := BuildInsertStatement(ADataSet, vMetadata);
 
-      AConnection.Execute(vStatement);
-    finally
-      vMetadata.Free;
-    end;
+    vStatement := BuildInsertStatement(ADataSet, vMetadata);
+
+    AConnection.Execute(vStatement);
 
     ADataSet.Next;
   end;
