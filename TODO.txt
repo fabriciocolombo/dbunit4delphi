@@ -24,12 +24,16 @@
 - Isolar camada de acesso a banco de dados em um pacote independente, visto que é possível a necessidade de reutilizá-lo em outros projetos
 
 - Geração do XML lendo os registros da tabela
-  - Recurperar informações de Metadata
-  - Exportar Várias Tabelas na sequencia pré-definida
+  - GUI - Permitir reordenar tabelas na sequencia pré-definida
+  - GUI - Permitir remover tabelas selecionadas
   - Gerar ordem das tabelas de acordo com a dependencia
-  - Cria utilitário de exportação
+  - Substituir valores dos campos exportados por caracteres de escape: 
+  	"   &quot;
+	'   &apos;
+	<   &lt;
+	>   &gt;
+	&   &amp;
   
-- Carregar configurações de conexão a partir de arquivo INI
 - Criar um ConnectionProvider que utilize o ConnectionFactory(tornar privado), sendo que o ConnectionProvider deve ler a configuração 
   do arquivo INI apenas uma vez. Deve ser fornecido mecanismo para configurar o ConnectionProvider na ausência do arquivo INI. 
 - Criar um ConnectionPool para utilizar pool de conexões. O ConnectionProvider pode ser configurado para utilizar o pool.

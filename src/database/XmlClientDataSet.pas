@@ -97,16 +97,28 @@ begin
 end;
 
 function TXmlClientDataSet.AddRow(AField, AValue: String): IDataSet;
+var
+  vFormatSettings: TFormatSettings;
+  vField: TField;
 begin
   CheckBrowseMode;
 
+  vFormatSettings.DateSeparator := '-';
+  vFormatSettings.ShortDateFormat := 'YYYY-MM-DD';
+
+  vField := FDataSet.FieldByName(AField);
+
   if SameText(AValue, NULL_VALUE) then
   begin
-    FDataSet.FieldByName(AField).Clear;
+    vField.Clear;
   end
   else
   begin
-    FDataSet.FieldByName(AField).AsString := AValue;
+    case vField.DataType of
+      ftDate, ftDateTime: vField.AsDateTime := StrToDateTime(AValue, vFormatSettings);
+    else
+      vField.AsString := AValue;
+    end;
   end;
 
   Result := Self;

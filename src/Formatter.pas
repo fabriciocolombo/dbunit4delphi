@@ -57,6 +57,7 @@ begin
     case vTypeToFormat of
       ftInteger, ftWord, ftBCD, ftLargeint: Result := Format_Int(value.AsInteger);
       ftFloat, ftCurrency, ftFMTBcd: Result := Format_Double(value.AsFloat);
+      ftDate, ftDateTime: Result := QuotedStr(Format_Date(value.AsDateTime));
     else
       Result := QuotedStr(value.AsString);
     end;

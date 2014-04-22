@@ -33,7 +33,7 @@ type
     constructor CreateFromText(AXmlText: String);
     constructor CreateFromStream(AStream: TStream);
   public
-    class function newFromFile(AFileName: TFileName): IXmlDataSetBuilder;
+    class function newFromFile(AFileName: TFileName;const ADatabaseConnection: IDatabaseConnection): IXmlDataSetBuilder;
     class function newFromText(AXmlText: String): IXmlDataSetBuilder;
     class function newFromStream(AStream: TStream): IXmlDataSetBuilder;
 
@@ -285,9 +285,9 @@ begin
   inherited;
 end;
 
-class function TXmlDataSetBuilder.newFromFile(AFileName: TFileName): IXmlDataSetBuilder;
+class function TXmlDataSetBuilder.newFromFile(AFileName: TFileName; const ADatabaseConnection: IDatabaseConnection): IXmlDataSetBuilder;
 begin
-  Result := TXmlDataSetBuilder.CreateFromFile(AFileName);
+  Result := TXmlDataSetBuilder.CreateFromFile(AFileName).usingConnection(ADatabaseConnection);
 end;
 
 class function TXmlDataSetBuilder.newFromStream(AStream: TStream): IXmlDataSetBuilder;

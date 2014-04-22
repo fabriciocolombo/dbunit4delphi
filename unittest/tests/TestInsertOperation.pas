@@ -33,11 +33,11 @@ var
   vDataSet: IDataSetReadOnly;
   vConnection: IMockDatabaseConnection;
 begin
-  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath).build;
-
   vConnection := TMockDatabaseConnection.Create;
   vConnection.addExpectedStatement(firstInsert);
   vConnection.addExpectedStatement(secondInsert);
+
+  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath, vConnection).build;
 
   TDatabaseOperation.INSERT.execute(vConnection, vDataSet);
 
@@ -49,9 +49,9 @@ var
   vDataSet: IDataSetReadOnly;
   vConnection: IDatabaseConnection;
 begin
-  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath).build;
-
   vConnection := ConnectionFactory.newConnection(TTestUtils.DATABASECONFIGDBX);
+
+  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath, vConnection).build;
 
   vConnection.StartTransaction;
   try
@@ -76,12 +76,12 @@ var
   vDataSet: IDataSetReadOnly;
   vConnection: IMockDatabaseConnection;
 begin
-  vDataSet := TXmlDataSetBuilder.newFromFile(SampleXMLPath).build;
-
   vConnection := TMockDatabaseConnection.Create;
   vConnection.addExpectedStatement(firstInsert);
   vConnection.addExpectedStatement(secondInsert);
   vConnection.addExpectedStatement(thirdInsert);
+
+  vDataSet := TXmlDataSetBuilder.newFromFile(SampleXMLPath, vConnection).build;
 
   TDatabaseOperation.INSERT.execute(vConnection, vDataSet);
 

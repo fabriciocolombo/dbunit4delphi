@@ -29,13 +29,13 @@ var
   vDataSet: IDataSetReadOnly;
   vConnection: IMockDatabaseConnection;
 begin
-  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath).build;
-
   vConnection := TMockDatabaseConnection.Create;
   vConnection.addExpectedStatement(firstUpdate);
   vConnection.addExpectedStatement(firstInsert);
   vConnection.addExpectedStatement(secondUpdate);
   vConnection.addExpectedStatement(secondInsert);
+
+  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath, vConnection).build;
 
   TDatabaseOperation.REFRESH.execute(vConnection, vDataSet);
 

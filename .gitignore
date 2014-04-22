@@ -12,6 +12,7 @@ bin/dbunit4delphitest.map
 bin/dbunit4delphitest.exe
 bin/GenaratorDataset.exe
 bin/dbunit4delphitest.drc
+bin/DBConfig.ini
 bpg/ProjectGroup_dbunit4delphi.dsk
 git-remove-history.sh
 CodeCoverage.exe

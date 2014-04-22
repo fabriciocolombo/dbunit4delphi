@@ -36,14 +36,14 @@ procedure TTestXmlDatasetReader.FileNotFound;
 begin
   ExpectedException := Exceptions.EFileNotFoundException;
 
-  TXmlDataSetBuilder.newFromFile('c:\xyz.xyz').build;
+  TXmlDataSetBuilder.newFromFile('c:\xyz.xyz', nil).build;
 end;
 
 procedure TTestXmlDatasetReader.CheckTablesSampleFile;
 var
   vIterator: IDataSetIterator;
 begin
-  vIterator := TXmlDataSetBuilder.newFromFile(SampleXMLPath).buildIterator;
+  vIterator := TXmlDataSetBuilder.newFromFile(SampleXMLPath, nil).buildIterator;
 
   CheckNotNull(vIterator);
 
@@ -75,7 +75,7 @@ var
   vIterator: IDataSetIterator;
   vDataset: IDataSet;
 begin
-  vIterator := TXmlDataSetBuilder.newFromFile(SampleXMLPath).buildIterator;
+  vIterator := TXmlDataSetBuilder.newFromFile(SampleXMLPath, nil).buildIterator;
 
   CheckNotNull(vIterator);
 
@@ -202,7 +202,7 @@ begin
 
   try
     ExpectedException := EEmptyXML;
-    TXmlDataSetBuilder.newFromFile(vFileName).build;
+    TXmlDataSetBuilder.newFromFile(vFileName, nil).build;
   finally
     Windows.DeleteFile(PChar(vFileName));
   end;

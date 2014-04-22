@@ -116,9 +116,6 @@
 					<Source>
 						<Source Name="MainSource">GenaratorDataset.dpr</Source>
 					</Source>
-					<Language>
-						<Language Name="RootDir">C:\Desenvolvimento\Elotech\EloComumComponentes\dbunit4delphi\Generator\</Language>
-					</Language>
 					<VersionInfo>
 						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
 						<VersionInfo Name="AutoIncBuild">False</VersionInfo>

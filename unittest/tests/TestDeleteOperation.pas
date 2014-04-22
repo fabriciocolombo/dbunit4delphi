@@ -28,10 +28,10 @@ var
   vDataSet: IDataSetReadOnly;
   vConnection: IMockDatabaseConnection;
 begin
-  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath).build;
-
   vConnection := TMockDatabaseConnection.Create;
   vConnection.addExpectedStatement('DELETE FROM PERSON');
+
+  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath, vConnection).build;
 
   TDatabaseOperation.DELETE_ALL.execute(vConnection, vDataSet);
 
@@ -46,11 +46,11 @@ var
   vDataSet: IDataSetReadOnly;
   vConnection: IMockDatabaseConnection;
 begin
-  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath).build;
-
   vConnection := TMockDatabaseConnection.Create;
   vConnection.addExpectedStatement(firstDelete);
   vConnection.addExpectedStatement(secondDelete);
+
+  vDataSet := TXmlDataSetBuilder.newFromFile(PersonXMLPath, vConnection).build;
 
   TDatabaseOperation.DELETE.execute(vConnection, vDataSet);
 
