@@ -13,6 +13,8 @@ type
     procedure twoRows;
     procedure oneRowTwoDataSet;
     procedure twoRowsTwoDataSet;
+    procedure FirstRaiseAccessViolationWithEmptyIterator;
+    procedure EOFMustReturnTrueWhenWrapperAnEmptyIterator;
   end;
 
 implementation
@@ -20,6 +22,24 @@ implementation
 uses Table, StubDataset;
 
 { TTestDataSetDecorator }
+
+procedure TTestDataSetDecorator.EOFMustReturnTrueWhenWrapperAnEmptyIterator;
+var
+  vDecorator: IDataSetReadOnly;
+begin
+  vDecorator := TXmlDataSetDecorator.Create(TDataSetIterator.Create(TInterfaceList.Create));
+
+  CheckTrue(vDecorator.Eof);
+end;
+
+procedure TTestDataSetDecorator.FirstRaiseAccessViolationWithEmptyIterator;
+var
+  vDecorator: IDataSetReadOnly;
+begin
+  vDecorator := TXmlDataSetDecorator.Create(TDataSetIterator.Create(TInterfaceList.Create));
+
+  vDecorator.First;
+end;
 
 procedure TTestDataSetDecorator.oneRow;
 var
@@ -52,6 +72,7 @@ begin
 
   vDecorator := TXmlDataSetDecorator.Create(TDataSetIterator.Create(vList) as IDataSetIterator);
 
+  CheckFalse(vDecorator.Eof);
   vDecorator.First;
   CheckFalse(vDecorator.Eof);
   CheckEqualsString('1', vDecorator.getField(0).AsString);

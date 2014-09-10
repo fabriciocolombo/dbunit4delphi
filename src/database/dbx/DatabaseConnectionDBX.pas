@@ -2,48 +2,48 @@ unit DatabaseConnectionDBX;
 
 interface
 
-uses DatabaseConnection, SqlExpr, DatabaseConfig, Query, DatabaseConfigDBX,
+uses DatabaseConnection, SqlExpr, DatabaseConfig, Query,
      QueryDBX, Exceptions, Statement, DB, DataSet, Classes, DBXCommon;
 
 type
-  TDatabaseConnectionDBX = class(TInterfacedObject, IDatabaseConnection)
+  TDatabaseConnectionDBX = class(TAbstractDatabaseConnection, IDatabaseConnection)
   private
     FSqlConnection: TSQLConnection;
     FTD: TDBXTransaction;
 
     function TableExists(ATableName: String): Boolean;
   public
-    procedure CommitTransaction;
-    procedure RollbackTransaction;
-    procedure StartTransaction;
-    function inTransaction: Boolean;
+    procedure CommitTransaction;override;
+    procedure RollbackTransaction;override;
+    procedure StartTransaction;override;
+    function inTransaction: Boolean;override;
 
-    procedure open;
-    procedure close;
+    procedure open;override;
+    procedure close;override;
 
-    procedure configure(const config: IDatabaseConfig);
+    procedure configure(const config: IDatabaseConfig);override;
 
-    function connected: Boolean;
+    function connected: Boolean;override;
 
-    function createQuery: IQuery;
+    function createQuery: IQuery;override;
 
     procedure AfterConstruction; override;
     destructor Destroy; override;
 
-    function realConnection: TObject;
+    function realConnection: TObject;override;
 
-    function Execute(const AStatement: IStatement): Integer;
+    function Execute(const AStatement: IStatement): Integer;override;
     function ExecuteWithParams(const AStatement: IStatement): Integer;
 
     //TODO - Carregar informação de que o campo é PK
-    function getFields(ATableName: String): IFieldListMetadata;
-    procedure getTableNames(AList: TStrings);
+    function getFields(ATableName: String): IFieldListMetadata;override;
+    procedure getTableNames(AList: TStrings);override;
   end;
 
 
 implementation
 
-uses SysUtils;
+uses SysUtils, DatabaseConnectionRegistry, DatabaseConnectionType;
 
 { TDatabaseConnectionDBX }
 
@@ -65,24 +65,16 @@ begin
 end;
 
 procedure TDatabaseConnectionDBX.configure(const config: IDatabaseConfig);
-var
-  vConfigDBX: IDatabaseConfigDBX;
 begin
-  if not Supports(config, IDatabaseConfigDBX, vConfigDBX) then
-    raise EInvalidDatabaseConfigClass.Create('TDatabaseConfigDBX', config.getName);
-
-  with vConfigDBX do
-  begin
-    FSqlConnection.Close;
-    FSqlConnection.DriverName := DriverName;
-    FSqlConnection.GetDriverFunc := GetDriverFunc;
-    FSqlConnection.LibraryName := LibraryName;
-    FSqlConnection.VendorLib := VendorLib;
-    FSqlConnection.Params.Text := Params.Text;
-    FSqlConnection.Params.Values['Database'] := Database;
-    FSqlConnection.Params.Values['User_Name'] := UserName;
-    FSqlConnection.Params.Values['Password'] := Password;
-  end;
+  FSqlConnection.Close;
+  FSqlConnection.DriverName := config.Params.Values['DriverName'];
+  FSqlConnection.GetDriverFunc := config.Params.Values['GetDriverFunc'];
+  FSqlConnection.LibraryName := config.Params.Values['LibraryName'];
+  FSqlConnection.VendorLib := config.Params.Values['VendorLib'];
+  FSqlConnection.Params.Text := config.Params.Text;
+  FSqlConnection.Params.Values['Database'] := config.Database;
+  FSqlConnection.Params.Values['User_Name'] := config.UserName;
+  FSqlConnection.Params.Values['Password'] := config.Password;
 end;
 
 function TDatabaseConnectionDBX.connected: Boolean;
@@ -183,5 +175,8 @@ begin
     vTables.Free;
   end;
 end;
+
+initialization
+  TDatabaseConnectionRegistry.RegisterConnection(dctDBX, TDatabaseConnectionDBX);
 
 end.

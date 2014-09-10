@@ -2,7 +2,7 @@ unit TestUtils;
 
 interface
 
-uses TestFramework, DatabaseConfig, DatabaseConfigDBX, Forms, SysUtils, Classes,
+uses TestFramework, DatabaseConfig, Forms, SysUtils, Classes,
      (* Register DBX Driver*)
      Data.DBXFirebird, Data.DbxOracle;
 
@@ -10,7 +10,7 @@ type
   TTestUtils = class
   private
   public
-    class function DATABASECONFIGDBX: TDatabaseConfigDBX;
+    class function DATABASECONFIGDBX: IDatabaseConfig;
 
     class procedure ChangeSystemDecimalSeparator(ANewSeparator: Char;var AOldSeparator: Char);
 
@@ -30,16 +30,16 @@ begin
   FormatSettings.DecimalSeparator := ANewSeparator;
 end;
 
-class function TTestUtils.DATABASECONFIGDBX: TDatabaseConfigDBX;
+class function TTestUtils.DATABASECONFIGDBX: IDatabaseConfig;
 begin
-  Result := TDatabaseConfigDBX.Create;
-  Result.DriverName := 'Firebird';
-  Result.GetDriverFunc := 'getSQLDriverINTERBASE';
-  Result.LibraryName := 'dbxfb.dll';
-  Result.VendorLib := 'fbclient.dll';
+  Result := TDatabaseConfig.newConfig(dctDBX);
   Result.Database := 'localhost:' + ExtractFilePath(Application.ExeName) + '..\unittest\db\SAMPLE.FDB';
   Result.UserName := 'sysdba';
   Result.Password := 'masterkey';
+  Result.Params.Values['DriverName'] := 'Firebird';
+  Result.Params.Values['GetDriverFunc'] := 'getSQLDriverINTERBASE';
+  Result.Params.Values['LibraryName'] := 'dbxfb.dll';
+  Result.Params.Values['VendorLib'] := 'fbclient.dll';
   Result.Params.Values['SQLDialect'] := '3';
 end;
 

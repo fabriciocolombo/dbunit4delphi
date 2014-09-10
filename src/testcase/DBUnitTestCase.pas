@@ -6,6 +6,9 @@ uses TestCaseExtension, DatabaseOperation, DatabaseConnection, DataSet, Database
      DatabaseConnectionFactory, DatabaseConfig;
 
 type
+  TestCaseAttribute = TestCaseExtension.TestCaseAttribute;
+  ExpectedExceptionAttribute = TestCaseExtension.ExpectedExceptionAttribute;
+
   TDBUnitTestCase = class(TTestCaseExtension)
   private
     FConnection: IDatabaseConnection;

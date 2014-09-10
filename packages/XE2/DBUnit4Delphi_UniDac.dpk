@@ -1,0 +1,49 @@
+package DBUnit4Delphi_UniDac;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  dsnap,
+  dbrtl,
+  dac160,
+  unidac160,
+  DBUnit4Delphi,
+  liteprovider160,
+  pgprovider160,
+  oraprovider160,
+  msprovider160,
+  myprovider160,
+  ibprovider160;
+
+contains
+  DatabaseConnectionUniDac in '..\..\src\database\unidac\DatabaseConnectionUniDac.pas',
+  QueryUniDac in '..\..\src\database\unidac\QueryUniDac.pas';
+
+end.
+

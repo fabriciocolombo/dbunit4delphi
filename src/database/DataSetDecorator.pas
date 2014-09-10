@@ -60,8 +60,12 @@ end;
 procedure TXmlDataSetDecorator.First;
 begin
   FIterator.First;
-  FDataSet := FIterator.Next;
-  FDataSet.First;
+
+  if FIterator.HasNext then
+  begin
+    FDataSet := FIterator.Next;
+    FDataSet.First;
+  end;
 end;
 
 procedure TXmlDataSetDecorator.Next;
@@ -76,7 +80,8 @@ end;
 
 function TXmlDataSetDecorator.Eof: Boolean;
 begin
-  Result := (Assigned(FDataSet) and FDataSet.Eof);
+  Result := (not Assigned(FDataSet)) or
+            (Assigned(FDataSet) and FDataSet.Eof);
 
   if Result then
   begin

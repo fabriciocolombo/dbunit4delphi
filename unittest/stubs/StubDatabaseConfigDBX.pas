@@ -2,18 +2,16 @@ unit StubDatabaseConfigDBX;
 
 interface
 
-uses DatabaseConfigDBX;
+uses DatabaseConfig;
 
 type
-  TStubDatabaseConfigDBX = class(TDatabaseConfigDBX)
+  TStubDatabaseConfigDBX = class(TDatabaseConfig)
   private
   public
     procedure AfterConstruction; override;
   end;
 
 implementation
-
-uses DatabaseConfig;
 
 { TStubDatabaseConfigDBX }
 
@@ -23,10 +21,6 @@ begin
   Database := 'stubdatabase';
   UserName := 'stubusername';
   Password := 'stubpw';
-  DriverName := 'InterBase';
-  GetDriverFunc := 'stubgetdriverfunc';
-  LibraryName := 'stublibraryname';
-  VendorLib := 'stubvendorlib';
 end;
 
 end.

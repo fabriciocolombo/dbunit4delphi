@@ -40,6 +40,7 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UnitSearchPath>..\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
 			<Manifest_File>None</Manifest_File>
 			<Icon_MainIcon>GenaratorDataset_Icon.ico</Icon_MainIcon>
 			<DCC_DcuOutput>..\dcu</DCC_DcuOutput>
@@ -65,8 +66,6 @@
 			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-			<Icon_MainIcon>GenaratorDataset_Icon.ico</Icon_MainIcon>
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 			<DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
@@ -81,6 +80,7 @@
 			<DCC_Optimize>false</DCC_Optimize>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<VerInfo_Locale>1033</VerInfo_Locale>
 		</PropertyGroup>
@@ -144,6 +144,9 @@
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Excluded_Packages>
+						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\DelphiLogger_XE2.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\AiseTribTributacaoComponents.bpl">Elotech Tributos Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\SQLiteWrap_Design.bpl">File C:\Users\Public\Documents\RAD Studio\9.0\Bpl\SQLiteWrap_Design.bpl not found</Excluded_Packages>
 						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfs16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfs16.bpl not found</Excluded_Packages>
 						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfrx16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfrx16.bpl not found</Excluded_Packages>
 						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfsDB16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfsDB16.bpl not found</Excluded_Packages>

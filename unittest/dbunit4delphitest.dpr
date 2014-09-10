@@ -50,7 +50,6 @@ uses
   Query in '..\src\database\Query.pas',
   Table in '..\src\database\Table.pas',
   XmlClientDataSet in '..\src\database\XmlClientDataSet.pas',
-  DatabaseConfigDBX in '..\src\database\dbx\DatabaseConfigDBX.pas',
   DatabaseConnectionDBX in '..\src\database\dbx\DatabaseConnectionDBX.pas',
   QueryDBX in '..\src\database\dbx\QueryDBX.pas',
   CompositeOperation in '..\src\database\operation\CompositeOperation.pas',
@@ -71,7 +70,9 @@ uses
   StatementUpdateBuilder in '..\src\statement\StatementUpdateBuilder.pas',
   XmlDatasetReader in '..\src\xml\XmlDatasetReader.pas',
   XMLDomParseError in '..\src\xml\XMLDomParseError.pas',
-  XmlValidator in '..\src\xml\XmlValidator.pas';
+  XmlValidator in '..\src\xml\XmlValidator.pas',
+  TestDatabaseConfig in 'tests\TestDatabaseConfig.pas',
+  DatabaseConnectionRegistry in '..\src\database\DatabaseConnectionRegistry.pas';
 
 {$R *.res}
 

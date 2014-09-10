@@ -3,7 +3,7 @@ unit XmlDatasetReader;
 interface
 
 uses xmldom, XMLIntf, msxmldom, XMLDoc, SysUtils, DataSet, Exceptions, XmlValidator,
-     Classes, DatabaseConnection;
+     Classes, DatabaseConnection, DB;
 
 type
   TXmlReadingMode = (xmlFile, xmlText, xmlStream);
@@ -16,6 +16,7 @@ type
 
     function build: IDataSetReadOnly;
     function buildIterator: IDataSetIterator;
+    function lazyBuild: IDataSetReadOnly;
   end;
 
   //Default class TXmlClientDataSet
@@ -43,6 +44,7 @@ type
 
     function build: IDataSetReadOnly;
     function buildIterator: IDataSetIterator;
+    function lazyBuild: IDataSetReadOnly;
 
     procedure AfterConstruction; override;
     destructor Destroy; override;
@@ -68,10 +70,32 @@ type
     class function NewInstance: TObject; override;
   end;
 
+  TLazyDataSetReadOnly = class(TInterfacedObject, IDataSetReadOnly)
+  private
+    FBuilder: IXmlDataSetBuilder;
+    FWrappedDataSet: IDataSetReadOnly;
+
+    procedure EnsureInitialized;
+  public
+    constructor Create(const ABuilder: IXmlDataSetBuilder);
+
+    function getTableName: String;
+    procedure setTableName(ATableName: String);
+
+    function getFieldCount: Integer;
+    function getField(AIndex: Integer): TField;
+
+    function getAllFields: String;
+
+    procedure First;
+    function Eof: Boolean;
+    procedure Next;
+  end;
+
 implementation
 
 uses DataSetDecorator, DataSetListBuilder, XmlClientDataSet,
-  DataSetIterator, XMLDomParseError, Data.DB;
+  DataSetIterator, XMLDomParseError;
 
 { TXmlDatasetReader }
 
@@ -285,6 +309,11 @@ begin
   inherited;
 end;
 
+function TXmlDataSetBuilder.lazyBuild: IDataSetReadOnly;
+begin
+  Result := TLazyDataSetReadOnly.Create(Self);
+end;
+
 class function TXmlDataSetBuilder.newFromFile(AFileName: TFileName; const ADatabaseConnection: IDatabaseConnection): IXmlDataSetBuilder;
 begin
   Result := TXmlDataSetBuilder.CreateFromFile(AFileName).usingConnection(ADatabaseConnection);
@@ -320,7 +349,78 @@ begin
   Result := Self;
 end;
 
+{ TLazyDataSetReadOnly }
+
+constructor TLazyDataSetReadOnly.Create(const ABuilder: IXmlDataSetBuilder);
+begin
+  FBuilder := ABuilder;
+end;
+
+procedure TLazyDataSetReadOnly.EnsureInitialized;
+begin
+  if not Assigned(FWrappedDataSet) then
+  begin
+    FWrappedDataSet := FBuilder.build;
+  end;
+end;
+
+function TLazyDataSetReadOnly.Eof: Boolean;
+begin
+  EnsureInitialized;
+
+  Result := FWrappedDataSet.Eof;
+end;
+
+procedure TLazyDataSetReadOnly.First;
+begin
+  EnsureInitialized;
+
+  FWrappedDataSet.First;
+end;
+
+function TLazyDataSetReadOnly.getAllFields: String;
+begin
+  EnsureInitialized;
+
+  Result := FWrappedDataSet.getAllFields;
+end;
+
+function TLazyDataSetReadOnly.getField(AIndex: Integer): TField;
+begin
+  EnsureInitialized;
+
+  Result := FWrappedDataSet.getField(AIndex);
+end;
+
+function TLazyDataSetReadOnly.getFieldCount: Integer;
+begin
+  EnsureInitialized;
+
+  Result := FWrappedDataSet.getFieldCount;
+end;
+
+function TLazyDataSetReadOnly.getTableName: String;
+begin
+  EnsureInitialized;
+
+  Result := FWrappedDataSet.getTableName;
+end;
+
+procedure TLazyDataSetReadOnly.Next;
+begin
+  EnsureInitialized;
+
+  FWrappedDataSet.Next;
+end;
+
+procedure TLazyDataSetReadOnly.setTableName(ATableName: String);
+begin
+  EnsureInitialized;
+
+  FWrappedDataSet.setTableName(ATableName);
+end;
+
 initialization
-  MSXML6_ProhibitDTD := False;
+  MSXML6_ProhibitDTD := False;
 
 end.

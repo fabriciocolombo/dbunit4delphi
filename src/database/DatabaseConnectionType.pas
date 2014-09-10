@@ -3,7 +3,7 @@ unit DatabaseConnectionType;
 interface
 
 type
-  TDatabaseConnectionType = (dctDBX);
+  TDatabaseConnectionType = (dctUndefined, dctDBX, dctUniDac);
 
 implementation
 

@@ -31,8 +31,7 @@ type
 
 implementation
 
-uses DatabaseConfigDBX, StubDatabaseConfig,
-  StubDatabaseConfigDBX, DatabaseConnectionType, SysUtils, StdConvs, TestUtils;
+uses StubDatabaseConfig, StubDatabaseConfigDBX, DatabaseConnectionType, SysUtils, StdConvs, TestUtils;
 
 { TSampleDBTestCase }
 

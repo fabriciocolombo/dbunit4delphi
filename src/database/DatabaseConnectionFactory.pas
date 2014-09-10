@@ -14,7 +14,8 @@ type
 
 implementation
 
-uses DatabaseConnectionDBX, SysUtils, TypInfo;
+uses DatabaseConnectionDBX,
+     SysUtils, TypInfo, System.Classes, DatabaseConnectionRegistry;
 
 var
   _DatabaseConnectionFactory: IDatabaseConnectionFactory = nil;
@@ -34,12 +35,17 @@ type
 { TDatabaseConnectionFactory }
 
 function TDatabaseConnectionFactory.newConnection(const Config: IDatabaseConfig; AOpened: Boolean): IDatabaseConnection;
+var
+  vClass: TClass;
 begin
-  case Config.DatabaseConnectionType of
-    dctDBX: Result := TDatabaseConnectionDBX.Create;
-  else
+  if Config.DatabaseConnectionType = dctUndefined then
+  begin
     raise EInvalidDatabaseConnectionType.Create(Config.DatabaseConnectionType);
   end;
+
+  vClass := TDatabaseConnectionRegistry.Resolve(Config.DatabaseConnectionType);
+
+  Result := TAbstractDatabaseConnectionClass(vClass).Create;
 
   if not Config.ConfigIsOk then
   begin

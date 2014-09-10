@@ -1,7 +1,7 @@
 ﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 		<PropertyGroup>
-			<ProjectGuid>{1E796C54-AE21-4103-A981-6D2FD11E6CDC}</ProjectGuid>
-			<MainSource>DBUnit4Delphi.dpk</MainSource>
+			<ProjectGuid>{3BA311A5-E566-4855-8EA1-B98190A250A4}</ProjectGuid>
+			<MainSource>DBUnit4Delphi_UniDac.dpk</MainSource>
 			<ProjectVersion>13.4</ProjectVersion>
 			<FrameworkType>None</FrameworkType>
 			<Base>True</Base>
@@ -35,9 +35,6 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
-			<VerInfo_Locale>1046</VerInfo_Locale>
-			<DCC_UnitSearchPath>..\..\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 			<GenPackage>true</GenPackage>
 			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
 			<GenDll>true</GenDll>
@@ -59,8 +56,6 @@
 			<DCC_RemoteDebug>true</DCC_RemoteDebug>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-			<VerInfo_Locale>1033</VerInfo_Locale>
 			<DCC_RemoteDebug>false</DCC_RemoteDebug>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -74,49 +69,19 @@
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
 			<DCCReference Include="rtl.dcp"/>
-			<DCCReference Include="xmlrtl.dcp"/>
 			<DCCReference Include="dsnap.dcp"/>
 			<DCCReference Include="dbrtl.dcp"/>
-			<DCCReference Include="DbxCommonDriver.dcp"/>
-			<DCCReference Include="dbexpress.dcp"/>
-			<DCCReference Include="..\..\src\Exceptions.pas"/>
-			<DCCReference Include="..\..\src\Formatter.pas"/>
-			<DCCReference Include="..\..\src\database\DatabaseConfig.pas"/>
-			<DCCReference Include="..\..\src\database\DatabaseConnection.pas"/>
-			<DCCReference Include="..\..\src\database\DatabaseConnectionType.pas"/>
-			<DCCReference Include="..\..\src\database\DataSet.pas"/>
-			<DCCReference Include="..\..\src\database\DataSetDecorator.pas"/>
-			<DCCReference Include="..\..\src\database\DataSetIterator.pas"/>
-			<DCCReference Include="..\..\src\database\DataSetListBuilder.pas"/>
-			<DCCReference Include="..\..\src\database\ExportDataSet.pas"/>
-			<DCCReference Include="..\..\src\database\Field.pas"/>
-			<DCCReference Include="..\..\src\database\FlatXmlDataSet.pas"/>
-			<DCCReference Include="..\..\src\database\Query.pas"/>
-			<DCCReference Include="..\..\src\database\Table.pas"/>
-			<DCCReference Include="..\..\src\database\XmlClientDataSet.pas"/>
-			<DCCReference Include="..\..\src\statement\CustomStatementBuilder.pas"/>
-			<DCCReference Include="..\..\src\statement\Statement.pas"/>
-			<DCCReference Include="..\..\src\statement\StatementBuilder.pas"/>
-			<DCCReference Include="..\..\src\statement\StatementBuilderIntf.pas"/>
-			<DCCReference Include="..\..\src\statement\StatementDeleteBuilder.pas"/>
-			<DCCReference Include="..\..\src\statement\StatementInsertBuilder.pas"/>
-			<DCCReference Include="..\..\src\statement\StatementSelectBuilder.pas"/>
-			<DCCReference Include="..\..\src\statement\StatementUpdateBuilder.pas"/>
-			<DCCReference Include="..\..\src\xml\XmlDatasetReader.pas"/>
-			<DCCReference Include="..\..\src\xml\XMLDomParseError.pas"/>
-			<DCCReference Include="..\..\src\xml\XmlValidator.pas"/>
-			<DCCReference Include="..\..\src\database\DatabaseConnectionFactory.pas"/>
-			<DCCReference Include="..\..\src\database\dbx\DatabaseConnectionDBX.pas"/>
-			<DCCReference Include="..\..\src\database\dbx\QueryDBX.pas"/>
-			<DCCReference Include="..\..\src\database\operation\CompositeOperation.pas"/>
-			<DCCReference Include="..\..\src\database\operation\DatabaseOperation.pas"/>
-			<DCCReference Include="..\..\src\database\operation\DeleteAllOperation.pas"/>
-			<DCCReference Include="..\..\src\database\operation\DeleteOperation.pas"/>
-			<DCCReference Include="..\..\src\database\operation\InsertOperation.pas"/>
-			<DCCReference Include="..\..\src\database\operation\NoneOperation.pas"/>
-			<DCCReference Include="..\..\src\database\operation\RefreshOperation.pas"/>
-			<DCCReference Include="..\..\src\database\operation\UpdateOperation.pas"/>
-			<DCCReference Include="..\..\src\database\DatabaseConnectionRegistry.pas"/>
+			<DCCReference Include="dac160.dcp"/>
+			<DCCReference Include="unidac160.dcp"/>
+			<DCCReference Include="DBUnit4Delphi.dcp"/>
+			<DCCReference Include="liteprovider160.dcp"/>
+			<DCCReference Include="pgprovider160.dcp"/>
+			<DCCReference Include="oraprovider160.dcp"/>
+			<DCCReference Include="msprovider160.dcp"/>
+			<DCCReference Include="myprovider160.dcp"/>
+			<DCCReference Include="ibprovider160.dcp"/>
+			<DCCReference Include="..\..\src\database\unidac\DatabaseConnectionUniDac.pas"/>
+			<DCCReference Include="..\..\src\database\unidac\QueryUniDac.pas"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -135,7 +100,7 @@
 			<BorlandProject>
 				<Delphi.Personality>
 					<Source>
-						<Source Name="MainSource">DBUnit4Delphi.dpk</Source>
+						<Source Name="MainSource">DBUnit4Delphi_UniDac.dpk</Source>
 					</Source>
 					<VersionInfo>
 						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
@@ -166,8 +131,8 @@
 					</VersionInfoKeys>
 					<Excluded_Packages>
 						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\DelphiLogger_XE2.bpl">(untitled)</Excluded_Packages>
-						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\JclDebugExpert160.bpl">JCL Debug IDE extension</Excluded_Packages>
-						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\JclProjectAnalysisExpert160.bpl">JCL Project Analyzer</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\CR_ElotechComponents_XE2.bpl">Elotech Component - Frame Work® [Crystal Report]</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\REXE2_ElotechComponents.bpl">Elotech Component - Text Editor® [EloRichEdit]</Excluded_Packages>
 						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\AiseTribTributacaoComponents.bpl">Elotech Tributos Components</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\SQLiteWrap_Design.bpl">File C:\Users\Public\Documents\RAD Studio\9.0\Bpl\SQLiteWrap_Design.bpl not found</Excluded_Packages>

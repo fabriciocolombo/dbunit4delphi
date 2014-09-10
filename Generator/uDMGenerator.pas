@@ -2,10 +2,14 @@ unit uDMGenerator;
 
 interface
 
+{$I DBUnit.inc}
+
 uses
   SysUtils, Classes, Forms,
-  DatabaseConnection, DatabaseConnectionFactory, DatabaseConfig, DatabaseConfigDBX, Data.DBXFirebird, Data.DB,
-  Data.SqlExpr, Data.DBXDb2, Data.DBXInterBase, Data.DBXMsSQL, Data.DBXMySQL, Data.DBXOdbc, Data.DBXOracle;
+  DatabaseConnection, DatabaseConnectionFactory, DatabaseConfig, DBXFirebird, DB,
+  SqlExpr, DBXDb2, DBXInterBase, DBXMsSQL, DBXMySQL, DBXOdbc,
+  {$IFDEF ENABLE_UNIDAC} DatabaseConnectionUniDac,{$ENDIF}
+  DBXOracle;
 
 type
   TDMGenerator = class(TDataModule)
@@ -29,11 +33,10 @@ implementation
 
 constructor TDMGenerator.Create(AOwner: TComponent);
 var
-  DBConfig: IDatabaseConfigDBX;
+  DBConfig: IDatabaseConfig;
 begin
   inherited;
-  DBConfig := TDatabaseConfigDBX.Create;
-  DBConfig.LoadFromFile('DBConfig.ini');
+  DBConfig := TDatabaseConfigFactory.CreateFromFile('DBConfig.ini');
 
   FConnection := ConnectionFactory.newConnection(DBConfig);
   FConnection.open;

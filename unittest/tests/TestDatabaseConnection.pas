@@ -33,7 +33,7 @@ end;
 procedure TTestDatabaseConnection.invalidDatabaseConnectionType;
 begin
   ExpectedException := EInvalidDatabaseConnectionType;
-  ConnectionFactory.newConnection(TDatabaseConfig.newConfig(TDatabaseConnectionType(-1)));
+  ConnectionFactory.newConnection(TDatabaseConfig.newConfig(dctUndefined));
 end;
 
 initialization

@@ -63,7 +63,6 @@ contains
   XMLDomParseError in '..\..\src\xml\XMLDomParseError.pas',
   XmlValidator in '..\..\src\xml\XmlValidator.pas',
   DatabaseConnectionFactory in '..\..\src\database\DatabaseConnectionFactory.pas',
-  DatabaseConfigDBX in '..\..\src\database\dbx\DatabaseConfigDBX.pas',
   DatabaseConnectionDBX in '..\..\src\database\dbx\DatabaseConnectionDBX.pas',
   QueryDBX in '..\..\src\database\dbx\QueryDBX.pas',
   CompositeOperation in '..\..\src\database\operation\CompositeOperation.pas',
@@ -73,6 +72,7 @@ contains
   InsertOperation in '..\..\src\database\operation\InsertOperation.pas',
   NoneOperation in '..\..\src\database\operation\NoneOperation.pas',
   RefreshOperation in '..\..\src\database\operation\RefreshOperation.pas',
-  UpdateOperation in '..\..\src\database\operation\UpdateOperation.pas';
+  UpdateOperation in '..\..\src\database\operation\UpdateOperation.pas',
+  DatabaseConnectionRegistry in '..\..\src\database\DatabaseConnectionRegistry.pas';
 
 end.

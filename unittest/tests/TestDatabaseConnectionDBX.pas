@@ -3,7 +3,7 @@ unit TestDatabaseConnectionDBX;
 interface
 
 uses TestCaseExtension,  DatabaseConnection, DatabaseConnectionDBX, DatabaseConnectionFactory,
-     DatabaseConfig, DatabaseConfigDBX, DatabaseConnectionType, SqlExpr, Exceptions,
+     DatabaseConfig, DatabaseConnectionType, SqlExpr, Exceptions,
      Query, QueryDBX, StubDatabaseConfig, StubDatabaseConfigDBX, DB;
 
 type
@@ -11,7 +11,6 @@ type
   private
   public
   published
-    procedure invalidConfigClass;
     procedure invalidConfiguration;
     procedure newConnection;
     procedure newQuery;
@@ -57,16 +56,10 @@ begin
   CheckEquals(1, vFields.Fields[0].Size);
 end;
 
-procedure TTestDatabaseConnectionDBX.invalidConfigClass;
-begin
-  ExpectedException := EInvalidDatabaseConfigClass;
-  ConnectionFactory.newConnection(TStubDatabaseConfig.newConfig(dctDBX));
-end;
-
 procedure TTestDatabaseConnectionDBX.invalidConfiguration;
 begin
   ExpectedException := EInvalidDatabaseConfiguration;
-  ConnectionFactory.newConnection(TDatabaseConfigDBX.newConfig(dctDBX));
+  ConnectionFactory.newConnection(TDatabaseConfig.newConfig(dctDBX));
 end;
 
 procedure TTestDatabaseConnectionDBX.newConnection;

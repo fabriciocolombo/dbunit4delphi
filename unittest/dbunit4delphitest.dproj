@@ -50,7 +50,6 @@
 			<Icon_MainIcon>dbunit4delphitest_Icon.ico</Icon_MainIcon>
 			<ImageDebugInfo>true</ImageDebugInfo>
 			<DCC_DebugDCUs>true</DCC_DebugDCUs>
-			<DCC_ExeOutput>..\bin</DCC_ExeOutput>
 			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
 			<DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
 			<VerInfo_Locale>1046</VerInfo_Locale>
@@ -148,7 +147,6 @@
 			<DCCReference Include="..\src\database\Query.pas"/>
 			<DCCReference Include="..\src\database\Table.pas"/>
 			<DCCReference Include="..\src\database\XmlClientDataSet.pas"/>
-			<DCCReference Include="..\src\database\dbx\DatabaseConfigDBX.pas"/>
 			<DCCReference Include="..\src\database\dbx\DatabaseConnectionDBX.pas"/>
 			<DCCReference Include="..\src\database\dbx\QueryDBX.pas"/>
 			<DCCReference Include="..\src\database\operation\CompositeOperation.pas"/>
@@ -170,6 +168,8 @@
 			<DCCReference Include="..\src\xml\XmlDatasetReader.pas"/>
 			<DCCReference Include="..\src\xml\XMLDomParseError.pas"/>
 			<DCCReference Include="..\src\xml\XmlValidator.pas"/>
+			<DCCReference Include="tests\TestDatabaseConfig.pas"/>
+			<DCCReference Include="..\src\database\DatabaseConnectionRegistry.pas"/>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -218,6 +218,9 @@
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Excluded_Packages>
+						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\DelphiLogger_XE2.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\AiseTribTributacaoComponents.bpl">Elotech Tributos Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\SQLiteWrap_Design.bpl">File C:\Users\Public\Documents\RAD Studio\9.0\Bpl\SQLiteWrap_Design.bpl not found</Excluded_Packages>
 						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfs16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfs16.bpl not found</Excluded_Packages>
 						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfrx16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfrx16.bpl not found</Excluded_Packages>
 						<Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD16\dclfsDB16.bpl">File C:\Program Files (x86)\FastReports\LibD16\dclfsDB16.bpl not found</Excluded_Packages>

@@ -9,7 +9,7 @@ target
 unittest/db/SAMPLE.FDB
 bin/dbunit4delphiR7.dcp
 bin/dbunit4delphitest.map
-bin/dbunit4delphitest.exe
+dbunit4delphitest.exe
 bin/GenaratorDataset.exe
 bin/dbunit4delphitest.drc
 bin/DBConfig.ini
@@ -18,3 +18,5 @@ git-remove-history.sh
 CodeCoverage.exe
 Arquivos.txt
 coverage.log
+DBUnit4Delphi_UniDac.dsk
+DBUnit4Delphi_UniDac.res
